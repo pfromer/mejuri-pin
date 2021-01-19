@@ -1,21 +1,29 @@
+import getMockedEndpoint from './mocks/category_endpoints'
+
 export default async function fetchProducts(category) {
 
-    const url = 'http://mejuri-fe-challenge.s3-website-us-east-1.amazonaws.com/' + category + '.json';
+    let jsonRes = [];
 
-    const res = await fetch(url);
-    const jsonRes = await res.json();
+    if (process.env.MOCK_API) {
+        console.log('mock')
+        jsonRes = getMockedEndpoint(category);
+    } else {
+        const url = process.env.BASE_API_URL + category + '.json';
+        const res = await fetch(url);
+        jsonRes = await res.json();
+    }
+
+    const randomInt = (min, max) => min + Math.floor((max - min) * Math.random());
+
 
     const mapProducts = (products) => products.map(function (p) {
         return {
             id: p.id,
             name: p.name,
             price: p.price,
-            image: p.variant_images[0].attachment_url_small
+            image: p.variant_images[randomInt(0, p.variant_images.length - 1)].attachment_url_small
         }
     });
 
-
-    return jsonRes.reduce((accumulator, currentValue) => accumulator.concat(mapProducts(currentValue.products)),
-        [])
-
+    return jsonRes.reduce((accumulator, currentValue) => accumulator.concat(mapProducts(currentValue.products)), [])
 }

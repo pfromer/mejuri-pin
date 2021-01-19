@@ -1,5 +1,6 @@
 import Image from 'next/image'
-import { ImageContainer, GridContainer } from './gridStyles'
+import { ImageContainer, GridContainer, SaveButton, TextContainer, IconContainer, OuterLink, ArrowContainer } from './gridStyles'
+import { FaThumbtack, FaArrowUp } from "react-icons/fa";
 
 
 const Grid = (props) => (
@@ -16,6 +17,26 @@ const Grid = (props) => (
                             height={500}
 
                         />
+                        <SaveButton>
+                            <IconContainer>
+                                <FaThumbtack />
+                            </IconContainer>
+                            <TextContainer>
+                                Save
+                            </TextContainer>
+                        </SaveButton>
+
+                        <OuterLink>
+                            <ArrowContainer>
+                                <FaArrowUp />
+                            </ArrowContainer>
+                            <TextContainer>
+                                mejuri.com
+                            </TextContainer>
+                        </OuterLink>
+
+
+
                     </ImageContainer>
                 )
             })}

@@ -1,16 +1,33 @@
 import CustomLink from '../link/link'
 import { StyledHeader } from './headerStyles'
 
+const categories = [
+  {
+    endpoint: 'shop_all',
+    nav: 'all'
+  },
+  {
+    endpoint: 'bracelets',
+    nav: 'bracelets'
+  },
+  {
+    endpoint: 'earrings',
+    nav: 'earrings'
+  },
+  {
+    endpoint: 'pendants',
+    nav: 'pendants'
+  },
+  {
+    endpoint: 'rings',
+    nav: 'rings'
+  }
+]
+
 const Header = () => (
   <StyledHeader>
-
     <CustomLink href="/" text="Likes" />
-    <CustomLink href="/category/[id]" as="/category/shop_all" text="All" />
-    <CustomLink href="/category/[id]" as="/category/bracelets" text="bracelets" />
-
-    <CustomLink href="/category/[id]" as="/category/earrings" text="earrings" />
-    <CustomLink href="/category/[id]" as="/category/pendants" text="pendants" />
-    <CustomLink href="/category/[id]" as="/category/rings" text="rings" />
+    {categories.map(c => <CustomLink href="/category/[id]" as={"/category/" + c.endpoint} text={c.nav} />)}
   </StyledHeader>
 )
 
