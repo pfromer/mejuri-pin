@@ -4,9 +4,9 @@ export const SaveButton = styled.a`
     position:absolute;
     right: 0.5em;
     top: 0.5em;
-    color: white;
+    color: ${props => props.theme.colors.powderWhite};
     display:none;
-    background-color: #e60023;
+    background-color: ${props => props.theme.colors.strong};
     border-radius: 12px;
     padding: 4px 16px;
     font-size: 16px;
@@ -15,7 +15,7 @@ export const OuterLink = styled.a`
     position:absolute;
     left: 0.5em;
     bottom: 0.5em;
-    color: white;
+    color: ${props => props.theme.colors.powderWhite};
     display:none;
     padding: 4px 16px;
 
@@ -34,8 +34,8 @@ export const ArrowContainer = styled.span`
     font-size:16px;
 `
 export const IconContainer = styled.div`
-margin-top: 9px;
-font-size: 18px;
+    margin-top: 9px;
+    font-size: 18px;
 `
 export const ImageContainer = styled.div`
     display: flex;
@@ -64,6 +64,7 @@ export const ImageContainer = styled.div`
     }
 `
 export const GridContainer = styled.div`
+    margin-top: ${props => props.theme.navbarHeight};
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
