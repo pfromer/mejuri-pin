@@ -26,30 +26,21 @@ const categories = [
     nav: 'Rings'
   }
 ];
-const Header = () => {
 
+const Header = () => {
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
-
-
   const handleScroll = debounce(() => {
-    // find current scroll position
     const currentScrollPos = window.pageYOffset;
-
-    // set state based on location info (explained in more detail below)
     setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
-
-    // set state to new scroll position
     setPrevScrollPos(currentScrollPos);
   });
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
-
   }, [prevScrollPos, visible, handleScroll]);
 
   return (<NavBar visible={visible}>
@@ -60,8 +51,6 @@ const Header = () => {
       {categories.map((c, index) => <li key={index + 1}><CustomLink href="/category/[id]" as={"/category/" + c.endpoint} text={c.nav} /></li>)}
     </StyledList>
   </NavBar>)
-
-
 }
 
 export default Header

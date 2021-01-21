@@ -1,5 +1,5 @@
 import Header from '../../../components/header/header'
-import fetchProducts from '../../../productFetcher'
+import fetchProducts from '../../../utilities/productFetcher'
 import Grid from '../../../components/grid/grid'
 import { connect } from "react-redux";
 

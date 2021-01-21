@@ -1,4 +1,4 @@
-import getMockedEndpoint from './mocks/category_endpoints'
+import getMockedEndpoint from '../mocks/category_endpoints'
 
 export default async function fetchProducts(category) {
 

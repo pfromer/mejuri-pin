@@ -5,8 +5,7 @@ import { StyledAnchor } from './linkStyles'
 
 const CustomLink = ({ href, as, text }) => {
     const router = useRouter()
-
-    const active = router.asPath === as;
+    const active = router.asPath === as || router.asPath === href;
 
     return <Link href={href} as={as}>
         <StyledAnchor active={active}>

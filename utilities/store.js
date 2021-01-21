@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
 import { createWrapper, HYDRATE } from 'next-redux-wrapper';
-import likes from './pages/likes';
+import likes from '../pages/likes';
 // create your reducer
 const reducer = (state = { likes: [], categories_fetched: [] }, action) => {
     switch (action.type) {
