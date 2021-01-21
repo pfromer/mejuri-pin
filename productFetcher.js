@@ -5,7 +5,6 @@ export default async function fetchProducts(category) {
     let jsonRes = [];
 
     if (process.env.MOCK_API) {
-        console.log('mock')
         jsonRes = getMockedEndpoint(category);
     } else {
         const url = process.env.BASE_API_URL + category + '.json';
@@ -21,7 +20,7 @@ export default async function fetchProducts(category) {
             id: p.id,
             name: p.name,
             price: p.price,
-            image: p.variant_images[randomInt(0, p.variant_images.length - 1)].attachment_url_small
+            image: process.env.BASE_IMAGES_URL + p.variant_images[randomInt(0, p.variant_images.length - 1)].attachment_url_small
         }
     });
 

@@ -1,25 +1,24 @@
-import { useRouter } from 'next/router'
 import Header from '../../../components/header/header'
 import fetchProducts from '../../../productFetcher'
 import Grid from '../../../components/grid/grid'
+import { connect } from "react-redux";
 
+const Category = ({ products, dispatch }) => {
 
-const Category = (props) => {
-  const router = useRouter()
-  const { id } = router.query
+  const addNewLike = (pin) => dispatch({ type: 'ADD_NEW_LIKE', newLike: pin });
 
   return (
     <>
       <Header />
-      <Grid products={props.products}></Grid>
+      <Grid
+        products={products}
+        onPinClick={addNewLike}
+      ></Grid>
     </>
   )
 }
 
 export async function getServerSideProps(context) {
-
-  console.log("-----hola-----------", "hola");
-
   const products = await fetchProducts(context.params.id)
 
   return {
@@ -29,4 +28,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default Category
+export default connect((state) => state)(Category);
