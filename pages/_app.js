@@ -1,6 +1,7 @@
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
+import '../index.css';
 import Theme from '../Theme';
 import { wrapper } from '../store'
 

@@ -25,12 +25,7 @@ const categories = [
     endpoint: 'rings',
     nav: 'Rings'
   }
-]
-
-
-
-
-
+];
 const Header = () => {
 
 
