@@ -7,7 +7,7 @@ export const ButtonContainer = styled.a`
     color: ${props => props.theme.colors.powderWhite};
     background-color: ${props => props.theme.colors.strong};
     border-radius: 12px;
-    padding: 4px 16px;
+    padding: 2px 10px;
     font-size: 16px;
     display:flex;
     align-items:center;

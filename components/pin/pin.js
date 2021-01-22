@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { ImageContainer, TextContainer, OuterLink, ArrowContainer, OverlayAnimation, OverlayText } from './pinStyles'
+import { ImageContainer, TextContainer, OuterLink, ArrowContainer, OverlayAnimation, OverlayText, Overlay } from './pinStyles'
 import { FaArrowUp } from "react-icons/fa";
 import { useState } from 'react';
 import Button from '../button/button';
@@ -44,7 +44,7 @@ const Pin = (props) => {
 
             {!showAnimation && showButton && (
                 <>
-                    <OverlayAnimation></OverlayAnimation>
+                    <Overlay></Overlay>
                     <Button onClick={onClick} ></Button>
                 </>
             )}

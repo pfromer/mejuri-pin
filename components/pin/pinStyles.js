@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes, css } from 'styled-components'
 
 
 export const OuterLink = styled.a`
@@ -37,7 +37,7 @@ export const ImageContainer = styled.div`
     }
 `
 
-export const OverlayAnimation = styled.div`
+const BaseOverlayStyles = css`
     position: absolute;
     bottom: 100%;
     left: 0;
@@ -46,10 +46,31 @@ export const OverlayAnimation = styled.div`
     overflow: hidden;
     width: 100%;
     height:0;
-    transition: .5s ease;
-    height: 100%;
-    bottom: 0;
+    opacity:0.2;
+    
+`
+
+function animaOverlay() {
+    const animation = keyframes`
+      to {
+        bottom: 0;
+        height: 100%;
+      }
+    `;
+    return animation;
+}
+
+export const OverlayAnimation = styled.div`
+    ${BaseOverlayStyles}
+    animation: ${animaOverlay()} 0.5s ease;
+    animation-fill-mode: forwards;
     opacity:0.4;
+`
+
+export const Overlay = styled.div`
+    ${BaseOverlayStyles}
+    bottom: 0;
+    height: 100%;  
 `
 
 export const OverlayText = styled.span`
