@@ -1,7 +1,7 @@
 import Header from '../components/header/header'
 import Grid from '../components/grid/grid'
 import { connect } from "react-redux";
-
+import Liked from '../components/liked/liked'
 
 const Likes = ({ likes, dispatch }) => {
 
@@ -12,8 +12,9 @@ const Likes = ({ likes, dispatch }) => {
             <Header />
             <Grid
                 products={likes}
-                onPinClick={removeLike}
+                onChildClick={removeLike}
                 category="likes"
+                childType={Liked}
             ></Grid>
         </>
     )

@@ -8,16 +8,16 @@ const Product = ({ product, otherVariants, category }) => {
     return (
         <>
             <Header />
-            <Pin product={product} onPinClick={() => { }}></Pin>
+            <Pin product={product} onChildClick={() => { }}></Pin>
             <Grid
                 products={otherVariants}
-                onPinClick={() => { }}
+                onChildClick={() => { }}
                 category={category}
+                childType={Pin}
             ></Grid>
         </>
     )
 }
-
 
 export async function getServerSideProps({ query }) {
 
@@ -41,32 +41,5 @@ export async function getServerSideProps({ query }) {
         },
     }
 }
-
-/*
-Product.getInitialProps = async ({ query }) => {
-
-    const product = await fetchProductDetail(query.category, query.id, query.variant)
-    const otherVariants = product.otherImages.map(function (image, index) {
-        return {
-            id: product.id,
-            name: product.name,
-            price: product.price,
-            image: image,
-            variant: index,
-            category: query.category
-        }
-    }).filter(p => p.variant != query.variant)
-
-    return {
-        props: {
-            product: product,
-            otherVariants: otherVariants,
-            category: query.category
-        },
-    }
-}
-*/
-
-
 
 export default Product

@@ -11,7 +11,7 @@ const Pin = (props) => {
     const router = useRouter()
 
     const onClick = () => {
-        props.onPinClick(props.product)
+        props.onChildClick(props.product)
         setshowAnimation(true);
     }
 
