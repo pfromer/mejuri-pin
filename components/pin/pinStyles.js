@@ -53,6 +53,6 @@ export const OverlayAnimation = styled.div`
 export const OverlayText = styled.span`
     color: white;
     font-size: 18px;
-    padding: calc(50% - 25px);
+    padding: 0 calc(50% - 25px);
 `
 

@@ -11,7 +11,6 @@ const Pin = (props) => {
         setshowAnimation(true);
     }
 
-
     const [showButton, setShowButton] = useState(false);
     const [showAnimation, setshowAnimation] = useState(false);
     return (
