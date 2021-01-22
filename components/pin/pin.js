@@ -17,7 +17,6 @@ const Pin = (props) => {
 
     const handleTap = (e) => {
         e.preventDefault()
-        console.log("clickk", props.product)
 
         router.push({
             pathname: '/product',
