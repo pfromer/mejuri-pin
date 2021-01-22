@@ -4,10 +4,10 @@ export async function fetchProducts(category) {
 
     let jsonRes = [];
 
-    if (process.env.MOCK_API) {
+    if (process.env.NEXT_PUBLIC_MOCK_API) {
         jsonRes = getMockedEndpoint(category);
     } else {
-        const url = process.env.BASE_API_URL + category + '.json';
+        const url = process.env.NEXT_PUBLIC_BASE_API_URL + category + '.json';
         const res = await fetch(url);
         jsonRes = await res.json();
     }
@@ -21,7 +21,7 @@ export async function fetchProducts(category) {
             id: p.id,
             name: p.name,
             price: p.price,
-            image: process.env.BASE_IMAGES_URL + p.variant_images[variant].attachment_url_small,
+            image: process.env.NEXT_PUBLIC_BASE_IMAGES_URL + p.variant_images[variant].attachment_url_small,
             variant: variant,
             category: category
         }
@@ -30,7 +30,7 @@ export async function fetchProducts(category) {
     return jsonRes.reduce((accumulator, currentValue) => accumulator.concat(mapProducts(currentValue.products)), [])
 }
 
-//hack for single product url which I don´t have
+//hack for product details api endpoint
 export async function fetchProductDetail(category, id, variant) {
 
     let jsonRes = [];
@@ -38,7 +38,7 @@ export async function fetchProductDetail(category, id, variant) {
     if (process.env.MOCK_API) {
         jsonRes = getMockedEndpoint(category);
     } else {
-        const url = process.env.BASE_API_URL + category + '.json';
+        const url = process.env.NEXT_PUBLIC_BASE_API_URL + category + '.json';
         const res = await fetch(url);
         jsonRes = await res.json();
     }
@@ -48,9 +48,10 @@ export async function fetchProductDetail(category, id, variant) {
             id: p.id,
             name: p.name,
             price: p.price,
-            image: process.env.BASE_IMAGES_URL + p.variant_images[variant].attachment_url_small,
+            image: process.env.NEXT_PUBLIC_BASE_IMAGES_URL + p.variant_images[variant].attachment_url_small,
             variant: variant,
-            category: category
+            category: category,
+            otherImages: p.variant_images.map(_variant => process.env.NEXT_PUBLIC_BASE_IMAGES_URL + _variant.attachment_url_small)
         }
     });
 
