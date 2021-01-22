@@ -6,7 +6,7 @@ export const OuterLink = styled.a`
     left: 0.5em;
     bottom: 0.5em;
     color: ${props => props.theme.colors.powderWhite};
-    display:none;
+    display:flex;
     padding: 4px 16px;
 
     background-color: #2a2828;
@@ -29,16 +29,6 @@ export const IconContainer = styled.div`
 `
 export const ImageContainer = styled.div`
     position: relative;
-
-    &:hover {
-        img {
-            filter: grayscale(50%);
-        }
-    }
-
-    &:hover ${OuterLink} {
-        display:flex;
-    }
 
     > div {
         border-radius: 12px;

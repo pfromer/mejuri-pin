@@ -25,11 +25,13 @@ const Pin = (props) => {
                 width={500}
                 height={500}
             >
-
             </Image>
 
             {!showAnimation && showButton && (
-                <Button onClick={onClick} ></Button>
+                <>
+                    <OverlayAnimation></OverlayAnimation>
+                    <Button onClick={onClick} ></Button>
+                </>
             )}
 
             {showAnimation && (
@@ -38,16 +40,17 @@ const Pin = (props) => {
                 </OverlayAnimation>
             )}
 
+            {!showAnimation && showButton && (
+                <OuterLink>
+                    <ArrowContainer>
+                        <FaArrowUp />
+                    </ArrowContainer>
+                    <TextContainer>
+                        mejuri.com
+                    </TextContainer>
+                </OuterLink>
+            )}
 
-
-            <OuterLink>
-                <ArrowContainer>
-                    <FaArrowUp />
-                </ArrowContainer>
-                <TextContainer>
-                    mejuri.com
-            </TextContainer>
-            </OuterLink>
         </ImageContainer>
     )
 }
