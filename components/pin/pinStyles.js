@@ -1,16 +1,6 @@
 import styled from 'styled-components'
 
-export const SaveButton = styled.a`
-    position:absolute;
-    right: 0.5em;
-    top: 0.5em;
-    color: ${props => props.theme.colors.powderWhite};
-    display:none;
-    background-color: ${props => props.theme.colors.strong};
-    border-radius: 12px;
-    padding: 4px 16px;
-    font-size: 16px;
-`
+
 export const OuterLink = styled.a`
     position:absolute;
     left: 0.5em;
@@ -46,11 +36,6 @@ export const ImageContainer = styled.div`
         }
     }
 
-    &:hover ${SaveButton} {
-        display:flex;
-        align-items:center;
-    }
-
     &:hover ${OuterLink} {
         display:flex;
     }
@@ -58,5 +43,26 @@ export const ImageContainer = styled.div`
     > div {
         border-radius: 12px;
     }
+`
+
+export const OverlayAnimation = styled.div`
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    background-color: black;
+    overflow: hidden;
+    width: 100%;
+    height:0;
+    transition: .5s ease;
+    height: 100%;
+    bottom: 0;
+    opacity:0.4;
+`
+
+export const OverlayText = styled.span`
+    color: white;
+    font-size: 18px;
+    padding: calc(50% - 25px);
 `
 

@@ -7,7 +7,7 @@ const Grid = (props) => (
             {props.products.map((product, index) => {
                 return (
                     <Pin
-                        key={index} product={product} onPinClick={props.onPinClick}></Pin>
+                        key={index + props.category} product={product} onPinClick={props.onPinClick}></Pin>
                 )
             })}
         </GridContainer>

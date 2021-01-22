@@ -1,33 +1,55 @@
 import Image from 'next/image'
-import { ImageContainer, SaveButton, TextContainer, IconContainer, OuterLink, ArrowContainer } from './pinStyles'
-import { FaThumbtack, FaArrowUp } from "react-icons/fa";
+import { ImageContainer, TextContainer, OuterLink, ArrowContainer, OverlayAnimation, OverlayText } from './pinStyles'
+import { FaArrowUp } from "react-icons/fa";
+import { useState } from 'react';
+import Button from '../button/button';
 
-const Pin = (props) => (
-    <ImageContainer onClick={() => props.onPinClick(props.product)} >
-        <Image
-            src={props.product.image}
-            alt={props.product.name}
-            width={500}
-            height={500}
-        />
-        <SaveButton>
-            <IconContainer>
-                <FaThumbtack />
-            </IconContainer>
-            <TextContainer>
-                Save
-            </TextContainer>
-        </SaveButton>
+const Pin = (props) => {
 
-        <OuterLink>
-            <ArrowContainer>
-                <FaArrowUp />
-            </ArrowContainer>
-            <TextContainer>
-                mejuri.com
+    const onClick = () => {
+        props.onPinClick(props.product)
+        setshowAnimation(true);
+    }
+
+
+    const [showButton, setShowButton] = useState(false);
+    const [showAnimation, setshowAnimation] = useState(false);
+    return (
+        <ImageContainer
+            onMouseEnter={() => setShowButton(true)}
+            onMouseLeave={() => setShowButton(false)}
+        >
+            <Image
+                src={props.product.image}
+                alt={props.product.name}
+                width={500}
+                height={500}
+            >
+
+            </Image>
+
+            {!showAnimation && showButton && (
+                <Button onClick={onClick} ></Button>
+            )}
+
+            {showAnimation && (
+                <OverlayAnimation>
+                    <OverlayText>Saved!</OverlayText>
+                </OverlayAnimation>
+            )}
+
+
+
+            <OuterLink>
+                <ArrowContainer>
+                    <FaArrowUp />
+                </ArrowContainer>
+                <TextContainer>
+                    mejuri.com
             </TextContainer>
-        </OuterLink>
-    </ImageContainer>
-)
+            </OuterLink>
+        </ImageContainer>
+    )
+}
 
 export default Pin;

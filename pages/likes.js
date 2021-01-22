@@ -13,6 +13,7 @@ const Likes = ({ likes, dispatch }) => {
             <Grid
                 products={likes}
                 onPinClick={removeLike}
+                category="likes"
             ></Grid>
         </>
     )

@@ -3,9 +3,12 @@ import fetchProducts from '../../../utilities/productFetcher'
 import Grid from '../../../components/grid/grid'
 import { connect } from "react-redux";
 
-const Category = ({ products, dispatch }) => {
+const Category = ({ products, category, dispatch }) => {
 
   const addNewLike = (pin) => dispatch({ type: 'ADD_NEW_LIKE', newLike: pin });
+
+
+
 
   return (
     <>
@@ -13,6 +16,7 @@ const Category = ({ products, dispatch }) => {
       <Grid
         products={products}
         onPinClick={addNewLike}
+        category={category}
       ></Grid>
     </>
   )
@@ -23,7 +27,8 @@ export async function getServerSideProps(context) {
 
   return {
     props: {
-      products: products
+      products: products,
+      category: context.params.id
     },
   }
 }
