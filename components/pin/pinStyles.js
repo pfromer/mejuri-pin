@@ -28,6 +28,8 @@ export const IconContainer = styled.div`
     font-size: 18px;
 `
 export const ImageContainer = styled.div`
+    display: flex;
+    justify-content: center;
     position: relative;
 
     > div {
