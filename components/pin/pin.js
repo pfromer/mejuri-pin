@@ -20,7 +20,6 @@ const Pin = (props) => {
 
         router.push({
             pathname: '/product',
-            //query: { id: props.product.id + "__" + props.product.variant + "__" + props.product.category },
             query: { id: props.product.id, variant: props.product.variant, category: props.product.category },
         })
     }
@@ -28,10 +27,7 @@ const Pin = (props) => {
     const [showButton, setShowButton] = useState(false);
     const [showAnimation, setshowAnimation] = useState(false);
 
-
     return (
-
-
         <ImageContainer
             onMouseEnter={() => setShowButton(true)}
             onMouseLeave={() => setShowButton(false)}
@@ -69,7 +65,6 @@ const Pin = (props) => {
                     </TextContainer>
                 </OuterLink>
             )}
-
         </ImageContainer>
     )
 }
