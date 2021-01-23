@@ -5,9 +5,10 @@ export const StyledList = styled.ul`
         flex-direction: row;
         list-style-type: none;
         justify-content: center;
+        margin-top: 22px;
 
         li{
-            margin-left:10px;
+            margin: 0 10px;
         }
 `
 export const StyledNavBar = styled.nav`

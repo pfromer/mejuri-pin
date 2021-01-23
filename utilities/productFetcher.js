@@ -23,7 +23,8 @@ export async function fetchProducts(category) {
             price: p.price,
             image: process.env.NEXT_PUBLIC_BASE_IMAGES_URL + p.variant_images[variant].attachment_url_small,
             variant: variant,
-            category: category
+            category: category,
+            slug: p.slug
         }
     });
 
@@ -51,6 +52,7 @@ export async function fetchProductDetail(category, id, variant) {
             image: process.env.NEXT_PUBLIC_BASE_IMAGES_URL + p.variant_images[variant].attachment_url_small,
             variant: variant,
             category: category,
+            slug: p.slug,
             otherImages: p.variant_images.map(_variant => process.env.NEXT_PUBLIC_BASE_IMAGES_URL + _variant.attachment_url_small)
         }
     });

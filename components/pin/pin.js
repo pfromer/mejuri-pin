@@ -61,7 +61,7 @@ const Pin = (props) => {
             )}
 
             {!showAnimation && showButton && (
-                <OuterLink>
+                <OuterLink target="_blank" href={process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug}>
                     <ArrowContainer>
                         <FaArrowUp />
                     </ArrowContainer>
