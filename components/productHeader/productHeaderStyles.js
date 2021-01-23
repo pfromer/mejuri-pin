@@ -23,5 +23,20 @@ export const OtherButtonsContainer = styled.div`
 `
 
 export const SaveButtonContainer = styled.div`
+        display: flex;
         flex-grow: 1;
+        justify-content: space-between;
+
+`
+export const LinkContainer = styled.div`
+        font-size: 25px;
+`
+
+export const StyledAnchor = styled.a`
+        background-color: #f1ecec;
+        padding: 9px 20px;
+        color: black;
+        text-decoration: none;
+        border-radius: 12px;
+
 `

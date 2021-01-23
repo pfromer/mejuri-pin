@@ -49,7 +49,7 @@ const Pin = (props) => {
                 <>
                     <Overlay></Overlay>
                     <ButtonContainer>
-                        <SaveButton onClick={onClick} ></SaveButton>
+                        <SaveButton onClick={onClick} rounded={true}></SaveButton>
                     </ButtonContainer>
                 </>
             )}

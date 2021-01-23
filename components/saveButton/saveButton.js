@@ -3,7 +3,7 @@ import { FaThumbtack } from "react-icons/fa";
 
 const SaveButton = (props) => (
 
-    <StyledButton onClick={props.onClick}>
+    <StyledButton onClick={props.onClick} rounded={props.rounded}>
         <IconContainer>
             <FaThumbtack />
         </IconContainer>

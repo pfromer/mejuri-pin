@@ -1,5 +1,5 @@
 import { fetchProductDetail } from '../utilities/productFetcher'
-import ProductHeader from '../components/ProductHeader/productHeader'
+import ProductHeader from '../components/productHeader/productHeader'
 import Pin from '../components/pin/pin'
 import Grid from '../components/grid/grid'
 
