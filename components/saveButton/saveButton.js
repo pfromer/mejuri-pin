@@ -4,9 +4,13 @@ import { FaThumbtack } from "react-icons/fa";
 const SaveButton = (props) => (
 
     <StyledButton onClick={props.onClick} rounded={props.rounded}>
-        <IconContainer>
+
+        { props.showIcon && <IconContainer>
             <FaThumbtack />
         </IconContainer>
+
+        }
+
         <TextContainer>
             Save
         </TextContainer>

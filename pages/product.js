@@ -2,6 +2,8 @@ import { fetchProductDetail } from '../utilities/productFetcher'
 import ProductHeader from '../components/productHeader/productHeader'
 import Pin from '../components/pin/pin'
 import Grid from '../components/grid/grid'
+import TappableImage from '../components/tappableImage/tappableImage';
+import { TappableImageContainer } from '../components/generalStyles';
 
 const Product = ({ product, otherVariants, category }) => {
 
@@ -12,7 +14,11 @@ const Product = ({ product, otherVariants, category }) => {
                 category={category}
                 product={product}
             ></ProductHeader>
-            <Pin product={product} onChildClick={() => { }}></Pin>
+            <TappableImageContainer>
+                <TappableImage
+                    product={product}
+                />
+            </TappableImageContainer>
             <Grid
                 products={otherVariants}
                 onChildClick={() => { }}

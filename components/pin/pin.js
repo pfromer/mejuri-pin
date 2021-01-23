@@ -1,9 +1,8 @@
-import Image from 'next/image'
 import { ImageContainer, TextContainer, OuterLink, ArrowContainer, OverlayAnimation, OverlayText, Overlay, ButtonContainer } from './pinStyles'
 import { FaArrowUp } from "react-icons/fa";
 import { useState } from 'react';
 import SaveButton from '../saveButton/saveButton';
-import Tappable from 'react-tappable';
+import TappableImage from '../tappableImage/tappableImage';
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
 
@@ -18,15 +17,6 @@ const Pin = (props) => {
         setshowAnimation(true);
     }
 
-    const handleTap = (e) => {
-        e.preventDefault()
-
-        router.push({
-            pathname: '/product',
-            query: { id: props.product.id, variant: props.product.variant, category: props.product.category },
-        })
-    }
-
     const [showButton, setShowButton] = useState(false);
     const [showAnimation, setshowAnimation] = useState(false);
 
@@ -35,21 +25,15 @@ const Pin = (props) => {
             onMouseEnter={() => setShowButton(true)}
             onMouseLeave={() => setShowButton(false)}
         >
-            <Tappable onTap={handleTap}>
-                <Image
-                    src={props.product.image}
-                    alt={props.product.name}
-                    width={500}
-                    height={500}
-                >
-                </Image>
-            </Tappable>
+            <TappableImage
+                product={props.product}
+            />
 
             {!showAnimation && showButton && (
                 <>
                     <Overlay></Overlay>
                     <ButtonContainer>
-                        <SaveButton onClick={onClick} rounded={true}></SaveButton>
+                        <SaveButton onClick={onClick} rounded={true} showIcon={true} ></SaveButton>
                     </ButtonContainer>
                 </>
             )}

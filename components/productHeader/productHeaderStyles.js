@@ -5,12 +5,24 @@ export const StyledHeader = styled.header`
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        margin: 16px 0;
         padding: 0 2px;
+
+
+        opacity: 0.8;
+        position: fixed;
+        z-index: 2;
+        background-color: white;
+        width: 92.5%;
+        top: 0;
+        height: 65px;
+        margin-top: 0;
+        padding: 0 10px;
 `
 
 
 export const OtherButtonsContainer = styled.div`
+        opacity:1;
+        padding-left: 5px;
         display: flex;
         justify-content: space-between;
         flex-grow: 20;
@@ -18,11 +30,12 @@ export const OtherButtonsContainer = styled.div`
         align-items: center;
 
         > * {
-                margin-right: 8px;
+                margin-right: 18px;
         }
 `
 
 export const SaveButtonContainer = styled.div`
+        opacity:1;
         display: flex;
         flex-grow: 1;
         justify-content: space-between;
@@ -37,6 +50,7 @@ export const StyledAnchor = styled.a`
         padding: 9px 20px;
         color: black;
         text-decoration: none;
-        border-radius: 12px;
+        border-radius: 20px;
+        font-weight: 700;
 
 `
