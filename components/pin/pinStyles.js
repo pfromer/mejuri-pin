@@ -32,7 +32,7 @@ export const ImageContainer = styled.div`
     justify-content: center;
     position: relative;
 
-    > div {
+    > div, img {
         border-radius: 12px;
     }
 `
@@ -47,14 +47,14 @@ const BaseOverlayStyles = css`
     width: 100%;
     height:0;
     opacity:0.2;
-    
+    top: 0;
 `
 
 function animaOverlay() {
     const animation = keyframes`
       to {
         bottom: 0;
-        height: 100%;
+        height: 98.5%;
       }
     `;
     return animation;
@@ -69,13 +69,15 @@ export const OverlayAnimation = styled.div`
 
 export const Overlay = styled.div`
     ${BaseOverlayStyles}
-    bottom: 0;
-    height: 100%;  
+    bottom: 0%;
+    height: 98.5%;  
 `
 
 export const OverlayText = styled.span`
     color: white;
     font-size: 18px;
+    top: 4%;
     padding: 0 calc(50% - 25px);
+    position: relative;
 `
 
