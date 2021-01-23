@@ -3,7 +3,7 @@ import { createWrapper, HYDRATE } from "next-redux-wrapper";
 import thunkMiddleware from "redux-thunk";
 
 
-const counter = (state = { likes: [], categories_fetched: [] }, action) => {
+const reducer = (state = { likes: [], categories_fetched: [] }, action) => {
     switch (action.type) {
         case HYDRATE:
             return state;
@@ -18,7 +18,7 @@ const counter = (state = { likes: [], categories_fetched: [] }, action) => {
 
 //COMBINING ALL REDUCERS
 const combinedReducer = combineReducers({
-    counter,
+    reducer,
     // OTHER REDUCERS WILL BE ADDED HERE
 });
 
@@ -39,7 +39,7 @@ const makeStore = ({ isServer }) => {
 
         const persistConfig = {
             key: "nextjs",
-            whitelist: ["counter"], // only counter will be persisted, add other reducers if needed
+            whitelist: ["reducer"], // only reducer will be persisted, add other reducers if needed
             storage, // if needed, use a safer storage
         };
 

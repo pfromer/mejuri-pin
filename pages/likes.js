@@ -1,17 +1,15 @@
 import Header from '../components/header/header'
 import Grid from '../components/grid/grid'
 import Liked from '../components/liked/liked'
+import { useSelector } from 'react-redux'
 
-const Likes = ({ likes, dispatch }) => {
-
-    const removeLike = (product) => dispatch({ type: 'REMOVE_LIKE', product: product });
-
+const Likes = () => {
+    const likes = useSelector(state => state.reducer.likes)
     return (
         <>
             <Header />
             <Grid
                 products={likes}
-                onChildClick={removeLike}
                 category="likes"
                 childType={Liked}
             ></Grid>

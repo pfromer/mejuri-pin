@@ -5,13 +5,16 @@ import { useState } from 'react';
 import Button from '../button/button';
 import Tappable from 'react-tappable';
 import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux'
 
 const Pin = (props) => {
 
     const router = useRouter()
 
+    const dispatch = useDispatch();
+
     const onClick = () => {
-        props.onChildClick(props.product)
+        dispatch({ type: 'ADD_NEW_LIKE', newLike: props.product })
         setshowAnimation(true);
     }
 

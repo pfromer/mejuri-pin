@@ -4,9 +4,8 @@ import Grid from '../../../components/grid/grid'
 import { connect } from "react-redux";
 import Pin from '../../../components/pin/pin'
 
-const Category = ({ products, category, dispatch }) => {
+const Category = ({ products, category }) => {
 
-  const addNewLike = (pin) => dispatch({ type: 'ADD_NEW_LIKE', newLike: pin });
 
 
 
@@ -16,7 +15,6 @@ const Category = ({ products, category, dispatch }) => {
       <Header />
       <Grid
         products={products}
-        onChildClick={addNewLike}
         category={category}
         childType={Pin}
       ></Grid>

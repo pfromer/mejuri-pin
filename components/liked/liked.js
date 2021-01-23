@@ -4,11 +4,12 @@ import { ImageContainer } from '../pin/pinStyles'
 import { CrossContainer } from './likedStyles'
 
 import { FaTimes } from "react-icons/fa";
-import { useRouter } from 'next/router'
+import { useDispatch } from 'react-redux'
+
 
 const Liked = (props) => {
 
-    console.log("liked props", props);
+    const dispatch = useDispatch();
 
     return (
         <ImageContainer>
@@ -20,7 +21,7 @@ const Liked = (props) => {
             >
             </Image>
             <CrossContainer>
-                <FaTimes onClick={() => props.onChildClick(props.product)} />
+                <FaTimes onClick={() => dispatch({ type: 'REMOVE_LIKE', product: props.product })} />
             </CrossContainer>
 
         </ImageContainer>
