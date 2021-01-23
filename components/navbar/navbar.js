@@ -1,5 +1,5 @@
 import CustomLink from '../link/link'
-import { StyledList, NavBar } from './headerStyles'
+import { StyledList, StyledNavBar } from './navbarStyles'
 import React, { useState, useEffect } from 'react';
 
 import { debounce } from '../../utilities/helpers';
@@ -27,7 +27,7 @@ const categories = [
   }
 ];
 
-const Header = () => {
+const NavBar = () => {
 
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -43,14 +43,14 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos, visible, handleScroll]);
 
-  return (<NavBar visible={visible}>
+  return (<StyledNavBar visible={visible}>
     <StyledList>
       <li key={0}>
         <CustomLink href="/likes" text="Likes" />
       </li>
       {categories.map((c, index) => <li key={index + 1}><CustomLink href="/category/[id]" as={"/category/" + c.endpoint} text={c.nav} /></li>)}
     </StyledList>
-  </NavBar>)
+  </StyledNavBar>)
 }
 
-export default Header
+export default NavBar

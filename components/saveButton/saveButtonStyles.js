@@ -1,9 +1,6 @@
 import styled from 'styled-components'
 
-export const ButtonContainer = styled.a`
-    position:absolute;
-    right: 0.5em;
-    top: 0.5em;
+export const StyledButton = styled.button`
     color: ${props => props.theme.colors.powderWhite};
     background-color: ${props => props.theme.colors.strong};
     border-radius: 12px;
@@ -11,6 +8,8 @@ export const ButtonContainer = styled.a`
     font-size: 16px;
     display:flex;
     align-items:center;
+    border-width:0;
+    outline:none;
 `
 export const TextContainer = styled.span`
     margin-left:4px;

@@ -12,8 +12,7 @@ const Grid = (props) => {
                     return (
                         <props.childType
                             key={index + '-' + product.id + '-' + props.category}
-                            product={product}
-                            onChildClick={(pin) => dispatch({ type: 'ADD_NEW_LIKE', newLike: pin })}>
+                            product={product}>
                         </props.childType>
                     )
                 })}

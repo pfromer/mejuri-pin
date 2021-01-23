@@ -1,8 +1,13 @@
 import styled, { keyframes, css } from 'styled-components'
 
+export const ButtonContainer = styled.div`
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+`
 
 export const OuterLink = styled.a`
-    position:absolute;
+    position: absolute;
     left: 0.5em;
     bottom: 0.5em;
     color: ${props => props.theme.colors.powderWhite};

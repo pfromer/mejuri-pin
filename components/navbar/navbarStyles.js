@@ -4,13 +4,13 @@ export const StyledList = styled.ul`
         display: flex;
         flex-direction: row;
         list-style-type: none;
-        justify-content: flex-end;
+        justify-content: center;
 
         li{
             margin-left:10px;
         }
 `
-export const NavBar = styled.div`
+export const StyledNavBar = styled.nav`
     position: fixed;
     height: ${props => props.theme.navbarHeight};
     width: 100%;

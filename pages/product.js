@@ -1,13 +1,21 @@
-import Header from '../components/header/header'
+
 import { fetchProductDetail } from '../utilities/productFetcher'
 import Pin from '../components/pin/pin'
 import Grid from '../components/grid/grid'
+import SaveButton from '../components/saveButton/saveButton'
+import { useDispatch } from 'react-redux'
 
 const Product = ({ product, otherVariants, category }) => {
 
+    const dispatch = useDispatch()
+
+    const onClick = () => {
+        dispatch({ type: 'ADD_NEW_LIKE', newLike: product })
+    }
+
     return (
         <>
-            <Header />
+            <SaveButton onClick={onClick}></SaveButton>
             <Pin product={product} onChildClick={() => { }}></Pin>
             <Grid
                 products={otherVariants}

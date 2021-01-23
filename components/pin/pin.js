@@ -1,8 +1,8 @@
 import Image from 'next/image'
-import { ImageContainer, TextContainer, OuterLink, ArrowContainer, OverlayAnimation, OverlayText, Overlay } from './pinStyles'
+import { ImageContainer, TextContainer, OuterLink, ArrowContainer, OverlayAnimation, OverlayText, Overlay, ButtonContainer } from './pinStyles'
 import { FaArrowUp } from "react-icons/fa";
 import { useState } from 'react';
-import Button from '../button/button';
+import SaveButton from '../saveButton/saveButton';
 import Tappable from 'react-tappable';
 import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
@@ -48,7 +48,9 @@ const Pin = (props) => {
             {!showAnimation && showButton && (
                 <>
                     <Overlay></Overlay>
-                    <Button onClick={onClick} ></Button>
+                    <ButtonContainer>
+                        <SaveButton onClick={onClick} ></SaveButton>
+                    </ButtonContainer>
                 </>
             )}
 
