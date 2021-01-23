@@ -35,4 +35,4 @@ export async function getServerSideProps(context) {
   }
 }
 
-export default connect((state) => state)(Category);
+export default Category;
