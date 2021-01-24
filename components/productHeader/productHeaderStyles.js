@@ -53,9 +53,11 @@ export const StyledAnchor = styled.a`
 
 const rotateAnimatiom = keyframes`
                 0% {transform: rotate(0deg);}
-                25% {transform: rotate(20deg);}
-                50% {transform: rotate(0deg);}
-                75% {transform: rotate(-20deg);}
+                15% {transform: rotate(20deg);}
+                40% {transform: rotate(0deg);}
+                55% {transform: rotate(-20deg);}
+                70% {transform: rotate(0deg);}
+                85% {transform: rotate(20deg);}
                 100% {transform: rotate(0deg);}
         `;
 
@@ -63,7 +65,7 @@ export const LikesLinkContainer = styled.div`
         font-size: 25px;
         padding-top: 5px;
         ${props => props.animate && css`
-                animation: ${rotateAnimatiom} 2s ease;
+                animation: ${rotateAnimatiom} 3s ease;
                 animation-fill-mode: forwards;
         `};
 
