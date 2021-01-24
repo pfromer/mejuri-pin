@@ -3,23 +3,26 @@ import styled from 'styled-components'
 
 export const StyledAnchor = styled.a`
 
-
+font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,メイリオ,Meiryo,ＭＳ Ｐゴシック,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+padding: 12px 20px;
+border-radius: 24px;
+font-size: 16px;
 
 ${({ active }) => active && `
     background-color: black;
-    padding: 4px 16px;
-    border-radius: 24px;
     color: white;
-    font-size: 16px;
+    
     font-weight: 700;
 `}
 
 ${({ active }) => !active && `
+
+&:hover {
     background-color: #e8e8e8;
-    padding: 4px 16px;
-    border-radius: 24px;
+  }
+    
+    
     color: black;
-    font-size: 16px;
     font-weight: 500;
 `}
 

@@ -16,7 +16,7 @@ const Product = ({ product, otherVariants, category }) => {
             ></ProductHeader>
             <TappableImageContainer>
                 <TappableImage
-                    product={product}
+                    product={product} key={product.variant}
                 />
             </TappableImageContainer>
             <Grid

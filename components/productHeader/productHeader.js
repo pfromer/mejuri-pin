@@ -18,7 +18,6 @@ const ProductHeader = (props) => {
     }
 
     const [saved, setSaved] = useState(false);
-
     const productLink = process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug;
 
     return (
@@ -28,14 +27,10 @@ const ProductHeader = (props) => {
                     <Link href={"/category/[id]"} as={"/category/" + props.category} ><FaChevronLeft /></Link>
                 </LinkContainer>
                 <WhatsappShareButton url={productLink} children={<WhatsappIcon size={30} round={true} />} />
-
                 <LikesLinkContainer animate={saved}>
                     <Link href={"/likes"}><FaThumbtack /></Link>
                 </LikesLinkContainer>
-
-
             </OtherButtonsContainer>
-
             <SaveButtonContainer>
                 <StyledAnchor href={productLink}>Visit</StyledAnchor>
                 {!saved &&
@@ -43,11 +38,8 @@ const ProductHeader = (props) => {
                 }
                 {saved &&
                     <SavedSpan>Saved!</SavedSpan>
-
                 }
-
             </SaveButtonContainer>
-
         </StyledHeader>)
 }
 

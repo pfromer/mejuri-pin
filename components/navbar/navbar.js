@@ -2,7 +2,7 @@ import CustomLink from '../link/link'
 import { StyledList, StyledNavBar } from './navbarStyles'
 import React, { useState, useEffect } from 'react';
 
-import { debounce } from '../../utilities/helpers';
+
 
 const categories = [
   {
@@ -29,21 +29,7 @@ const categories = [
 
 const NavBar = () => {
 
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [visible, setVisible] = useState(true);
-
-  const handleScroll = debounce(() => {
-    const currentScrollPos = window.pageYOffset;
-    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
-    setPrevScrollPos(currentScrollPos);
-  });
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos, visible, handleScroll]);
-
-  return (<StyledNavBar visible={visible}>
+  return (<StyledNavBar>
     <StyledList>
       <li key={0}>
         <CustomLink href="/likes" text="Likes" />

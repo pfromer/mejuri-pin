@@ -1,4 +1,4 @@
-import NavBar from '../components/navbar/navbar'
+import Header from '../components/header/header'
 import Grid from '../components/grid/grid'
 import Liked from '../components/liked/liked'
 import { useSelector } from 'react-redux'
@@ -7,7 +7,7 @@ const Likes = () => {
     const likes = useSelector(state => state.reducer.likes)
     return (
         <>
-            <NavBar />
+            <Header pinsCount={likes.length} />
             <Grid
                 products={likes}
                 category="likes"

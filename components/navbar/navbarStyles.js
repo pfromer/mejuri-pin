@@ -12,23 +12,6 @@ export const StyledList = styled.ul`
         }
 `
 export const StyledNavBar = styled.nav`
-    position: fixed;
-    height: ${props => props.theme.navbarHeight};
-    width: 100%;
-    background-color: ${props => props.theme.colors.powderWhite};
-    z-index:2;
-    transition: top 0.6s;
-    top : 0;
+    margin-bottom: 8px;
     
-    ${props => props.theme.down(props.theme.breakpoints.sm)} {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-    }
-
-    ${({ visible }) => !visible && css`
-        ${props => props.theme.down(props.theme.breakpoints.sm)} {
-            top : ${props => "-" + props.theme.navbarHeight}
-        }
-    `}
 `
