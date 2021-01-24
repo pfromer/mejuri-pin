@@ -19,7 +19,7 @@ const TappableImage = (props) => {
     return (
 
         <ImageContainer>
-            <Tappable onTap={handleTap} moveThreshold={500}>
+            <Tappable onTap={handleTap} moveThreshold={40}>
                 <Image
                     src={props.product.image}
                     alt={props.product.src}
