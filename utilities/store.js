@@ -1,14 +1,16 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
-import { createWrapper, HYDRATE } from "next-redux-wrapper";
+import { createWrapper } from "next-redux-wrapper";
 import thunkMiddleware from "redux-thunk";
 
 
 const reducer = (state = { likes: [], categories_fetched: [] }, action) => {
     switch (action.type) {
-        case HYDRATE:
-            return state;
         case 'ADD_NEW_LIKE':
-            return { ...state, likes: [...state.likes, action.newLike] };
+            if (state.likes.some(l => l.id == action.newLike.id && l.variant == action.newLike.variant)) {
+                return state;
+            } else {
+                return { ...state, likes: [...state.likes, action.newLike] };
+            }
         case 'REMOVE_LIKE':
             return { ...state, likes: state.likes.filter(l => l.id != action.product.id) };
         default:
