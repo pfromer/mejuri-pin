@@ -15,6 +15,7 @@ const theme = {
         large: "3em"
     },
     navbarHeight: "60px",
+    productHeaderHeight: "65px",
 
     up: breakpoint => `@media (min-width: calc(${breakpoint} + 0.02px))`,
     down: breakpoint => `@media (max-width: ${breakpoint})`,

@@ -3,12 +3,9 @@ import { FaArrowUp } from "react-icons/fa";
 import { useState } from 'react';
 import SaveButton from '../saveButton/saveButton';
 import TappableImage from '../tappableImage/tappableImage';
-import { useRouter } from 'next/router'
 import { useDispatch } from 'react-redux'
 
 const Pin = (props) => {
-
-    const router = useRouter()
 
     const dispatch = useDispatch();
 

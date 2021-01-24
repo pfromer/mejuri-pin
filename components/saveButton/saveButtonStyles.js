@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const StyledButton = styled.button`
     color: ${props => props.theme.colors.powderWhite};
     background-color: ${props => props.theme.colors.strong};
-    padding: 2px 14px;
+    padding: 2px 24px;
     font-size: 16px;
     display:flex;
     align-items:center;
@@ -13,6 +13,7 @@ export const StyledButton = styled.button`
 
     ${props => props.rounded && css`
         border-radius: 12px;
+        padding: 2px 12px;
     `};
 
 `
