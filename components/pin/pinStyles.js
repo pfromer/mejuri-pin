@@ -51,7 +51,7 @@ const BaseOverlayStyles = css`
     overflow: hidden;
     width: 100%;
     height:0;
-    opacity:0.2;
+    opacity:0.05;
     top: 0;
 `
 
