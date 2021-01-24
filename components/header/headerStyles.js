@@ -22,9 +22,12 @@ export const StyledHeader = styled.header`
 `}
 `
 
-export const PinsCountContainer = styled.div`
+export const PinsCountContainer = styled.span`
     display: flex;
     justify-content: center;
+    font-weight: 100;
+    font-family: -apple - system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen - Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica, ヒラギノ角ゴ Pro W3, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, ＭＳ Ｐゴシック, Arial, sans - serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    font-size: 14px;
 
     ${props => props.theme.down(props.theme.breakpoints.sm)} {
         display: none;
