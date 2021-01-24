@@ -1,7 +1,6 @@
 import getMockedEndpoint from '../mocks/category_endpoints'
 
-export async function fetchProducts(category) {
-
+async function getApiResponse(category) {
     let jsonRes = [];
 
     if (process.env.NEXT_PUBLIC_MOCK_API) {
@@ -12,8 +11,12 @@ export async function fetchProducts(category) {
         jsonRes = await res.json();
     }
 
-    const randomInt = (min, max) => min + Math.floor((max - min) * Math.random());
+    return jsonRes;
+}
 
+export async function fetchProducts(category) {
+    const jsonRes = await getApiResponse(category);
+    const randomInt = (min, max) => min + Math.floor((max - min) * Math.random());
 
     const mapProducts = (products) => products.map(function (p) {
         const variant = randomInt(0, p.variant_images.length - 1)
@@ -33,23 +36,14 @@ export async function fetchProducts(category) {
 
 //hack for product details api endpoint
 export async function fetchProductDetail(category, id, variant) {
-
-    let jsonRes = [];
-
-    if (process.env.MOCK_API) {
-        jsonRes = getMockedEndpoint(category);
-    } else {
-        const url = process.env.NEXT_PUBLIC_BASE_API_URL + category + '.json';
-        const res = await fetch(url);
-        jsonRes = await res.json();
-    }
+    const jsonRes = await getApiResponse(category);
 
     const mapProducts = (products) => products.map(function (p) {
         return {
             id: p.id,
             name: p.name,
             price: p.price,
-            image: process.env.NEXT_PUBLIC_BASE_IMAGES_URL + p.variant_images[variant].attachment_url_small,
+            image: process.env.NEXT_PUBLIC_BASE_IMAGES_URL + p.variant_images[variant].attachment_url_medium,
             variant: variant,
             category: category,
             slug: p.slug,
