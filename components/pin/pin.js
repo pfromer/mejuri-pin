@@ -4,6 +4,7 @@ import { useState } from 'react';
 import SaveButton from '../saveButton/saveButton';
 import TappableImage from '../tappableImage/tappableImage';
 import { useDispatch } from 'react-redux'
+import { ProductName } from '../generalStyles'
 
 const Pin = (props) => {
 
@@ -18,40 +19,46 @@ const Pin = (props) => {
     const [showAnimation, setshowAnimation] = useState(false);
 
     return (
-        <ImageContainer
-            onMouseEnter={() => setShowButton(true)}
-            onMouseLeave={() => setShowButton(false)}
-        >
-            <TappableImage
-                product={props.product}
-            />
+        <div>
+            <ImageContainer
+                onMouseEnter={() => setShowButton(true)}
+                onMouseLeave={() => setShowButton(false)}
+            >
+                <TappableImage
+                    product={props.product}
+                />
 
-            {!showAnimation && showButton && (
-                <>
-                    <Overlay></Overlay>
-                    <ButtonContainer>
-                        <SaveButton onClick={onClick} rounded={true} showIcon={true} ></SaveButton>
-                    </ButtonContainer>
-                </>
-            )}
+                {!showAnimation && showButton && (
+                    <>
+                        <Overlay></Overlay>
+                        <ButtonContainer>
+                            <SaveButton onClick={onClick} rounded={true} showIcon={true} ></SaveButton>
+                        </ButtonContainer>
+                    </>
+                )}
 
-            {showAnimation && (
-                <OverlayAnimation>
-                    <OverlayText>Saved!</OverlayText>
-                </OverlayAnimation>
-            )}
+                {showAnimation && (
+                    <OverlayAnimation>
+                        <OverlayText>Saved!</OverlayText>
+                    </OverlayAnimation>
+                )}
 
-            {!showAnimation && showButton && (
-                <OuterLink target="_blank" href={process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug}>
-                    <ArrowContainer>
-                        <FaArrowUp />
-                    </ArrowContainer>
-                    <TextContainer>
-                        mejuri.com
+                {!showAnimation && showButton && (
+                    <OuterLink target="_blank" href={process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug}>
+                        <ArrowContainer>
+                            <FaArrowUp />
+                        </ArrowContainer>
+                        <TextContainer>
+                            mejuri.com
                     </TextContainer>
-                </OuterLink>
+                    </OuterLink>
+                )}
+            </ImageContainer>
+            {!showAnimation && showButton && false && (
+                <ProductName>{props.product.name}</ProductName>
             )}
-        </ImageContainer>
+
+        </div >
     )
 }
 

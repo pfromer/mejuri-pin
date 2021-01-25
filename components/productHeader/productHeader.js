@@ -1,11 +1,12 @@
 
-import { StyledHeader, OtherButtonsContainer, SaveButtonContainer, LinkContainer, StyledAnchor, LikesLinkContainer, SavedSpan } from './productHeaderStyles';
+import { MainContainer, OtherButtonsContainer, SaveButtonContainer, LinkContainer, LikesLinkContainer, SavedSpan } from './productHeaderStyles';
+import { StyledAnchor } from '../generalStyles';
 import SaveButton from '../saveButton/saveButton';
 import { FaChevronLeft } from "react-icons/fa";
 import Link from 'next/link'
 import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import { FaThumbtack } from "react-icons/fa";
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
 
 const ProductHeader = (props) => {
@@ -14,33 +15,37 @@ const ProductHeader = (props) => {
 
     const onClick = () => {
         dispatch({ type: 'ADD_NEW_LIKE', newLike: props.product })
-        setSaved(true);
+        setFireAnimation(true);
     }
 
-    const [saved, setSaved] = useState(false);
+    const likes = useSelector(state => state.reducer.likes);
+    const [fireAnimation, setFireAnimation] = useState(false);
+    var saved = likes.some(l => l.variant == props.product.variant && l.id == props.product.id);
     const productLink = process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug;
 
     return (
-        <StyledHeader>
-            <OtherButtonsContainer>
-                <LinkContainer>
-                    <Link href={"/category/[id]"} as={"/category/" + props.category} ><FaChevronLeft /></Link>
-                </LinkContainer>
-                <WhatsappShareButton url={productLink} children={<WhatsappIcon size={30} round={true} />} />
-                <LikesLinkContainer animate={saved}>
-                    <Link href={"/likes"}><FaThumbtack /></Link>
-                </LikesLinkContainer>
-            </OtherButtonsContainer>
-            <SaveButtonContainer>
-                <StyledAnchor href={productLink}>Visit</StyledAnchor>
-                {!saved &&
-                    <SaveButton onClick={onClick}></SaveButton>
-                }
-                {saved &&
-                    <SavedSpan>Saved!</SavedSpan>
-                }
-            </SaveButtonContainer>
-        </StyledHeader>)
+        <header>
+            { fireAnimation && saved &&
+                <></>
+            }
+            <MainContainer>
+                <OtherButtonsContainer>
+                    <LinkContainer>
+                        <Link href={"/category/[id]"} as={"/category/" + props.category} ><FaChevronLeft /></Link>
+                    </LinkContainer>
+                    <WhatsappShareButton url={productLink} children={<WhatsappIcon size={30} round={true} />} />
+                </OtherButtonsContainer>
+                <SaveButtonContainer>
+                    <StyledAnchor rounded={true} href={"/likes"}>Likes</StyledAnchor>
+                    {!saved &&
+                        <SaveButton onClick={onClick}></SaveButton>
+                    }
+                    {saved &&
+                        <SavedSpan>Saved!</SavedSpan>
+                    }
+                </SaveButtonContainer>
+            </MainContainer>
+        </header>)
 }
 
 export default ProductHeader

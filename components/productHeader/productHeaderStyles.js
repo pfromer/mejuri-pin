@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components'
 
-export const StyledHeader = styled.header`
+export const MainContainer = styled.div`
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -39,35 +39,32 @@ export const LinkContainer = styled.div`
         font-size: 25px;
         padding-top: 1px;
 `
-export const StyledAnchor = styled.a`
-        background-color: #f1ecec;
-        padding: 9px 20px;
-        color: black;
-        text-decoration: none;
-        border-radius: 20px;
-        font-weight: 700;
-        padding: 12px 25px;
-        margin-right: 8px;
-`
 
 
-const rotateAnimatiom = keyframes`
-                0% {transform: rotate(0deg);}
-                15% {transform: rotate(20deg);}
-                40% {transform: rotate(0deg);}
-                55% {transform: rotate(-20deg);}
-                70% {transform: rotate(0deg);}
-                85% {transform: rotate(20deg);}
-                100% {transform: rotate(0deg);}
+const goDown = keyframes`
+                0% {top: -24px; visibility visible;}
+                99% {top: 80px; visibility visible;}
+                100% {top: 80px; visibility hidden;}
         `;
 
 export const LikesLinkContainer = styled.div`
-        font-size: 25px;
-        padding-top: 5px;
-        ${props => props.animate && css`
-                animation: ${rotateAnimatiom} 3s ease;
+
+       
+                animation: ${goDown} 3s ease;
                 animation-fill-mode: forwards;
-        `};
+        
+
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        font-size: 14px;
+        padding-top: 5px;
+        background-color: black;
+        color: white;
+        border-radius: 12px;
+        top: 3px;
+        opacity: 1;
+        z-index: 3;
 
         
 `

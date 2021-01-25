@@ -12,7 +12,7 @@ const reducer = (state = { likes: [], categories_fetched: [] }, action) => {
                 return { ...state, likes: [...state.likes, action.newLike] };
             }
         case 'REMOVE_LIKE':
-            return { ...state, likes: state.likes.filter(l => l.id != action.product.id) };
+            return { ...state, likes: state.likes.filter(l => l.id != action.product.id || l.variant != action.product.variant) };
         default:
             return state;
     }

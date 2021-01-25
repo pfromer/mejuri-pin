@@ -3,10 +3,11 @@ import ProductHeader from '../components/productHeader/productHeader'
 import Pin from '../components/pin/pin'
 import Grid from '../components/grid/grid'
 import TappableImage from '../components/tappableImage/tappableImage';
-import { TappableImageContainer } from '../components/generalStyles';
+import { TappableImageContainer, StyledAnchor, DistantContainer, ProductName } from '../components/generalStyles';
 
 const Product = ({ product, otherVariants, category }) => {
 
+    const productLink = process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + product.slug;
 
     return (
         <>
@@ -19,6 +20,10 @@ const Product = ({ product, otherVariants, category }) => {
                     product={product} key={product.variant}
                 />
             </TappableImageContainer>
+            <DistantContainer>
+                <ProductName>{product.name}</ProductName>
+                <StyledAnchor href={productLink}>Visist</StyledAnchor>
+            </DistantContainer>
             <Grid
                 products={otherVariants}
                 onChildClick={() => { }}
