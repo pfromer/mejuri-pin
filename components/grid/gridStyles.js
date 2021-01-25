@@ -10,6 +10,7 @@ export const GridContainer = styled.div`
     ${props => props.theme.down(props.theme.breakpoints.sm)} {
         grid-template-columns: repeat(auto-fill, minmax(125px, 1fr));
         margin-top: 65px;
+        grid-gap: 10px;
     }
 
 `
