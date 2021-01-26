@@ -18,10 +18,8 @@ export const OuterLink = styled.a`
     border-radius: 12px;
     font-size: 14px;
     opacity: 0.8;
-`
-
-export const TextContainer = styled.span`
-    margin-left:4px;
+    width: 90px;
+    overflow: hidden;
 `
 
 export const ArrowContainer = styled.span`
@@ -34,7 +32,6 @@ export const IconContainer = styled.div`
 `
 export const ImageContainer = styled.div`
     display: flex;
-    justify-content: center;
     position: relative;
 
     > div, img {
@@ -55,19 +52,18 @@ const BaseOverlayStyles = css`
     top: 0;
 `
 
-function animaOverlay() {
-    const animation = keyframes`
-      to {
-        bottom: 0;
-        height: 98.5%;
-      }
-    `;
-    return animation;
-}
+
+const overlayKeyframe = keyframes`
+    to {
+    bottom: 0;
+    height: 98.5%;
+    }
+`;
+
 
 export const OverlayAnimation = styled.div`
     ${BaseOverlayStyles}
-    animation: ${animaOverlay()} 0.5s ease;
+    animation: ${overlayKeyframe} 0.5s ease;
     animation-fill-mode: forwards;
     opacity:0.4;
 `
@@ -85,4 +81,38 @@ export const OverlayText = styled.span`
     padding: 0 calc(50% - 25px);
     position: relative;
 `
+
+const horizontalScrollKeyFrame = keyframes`
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-300%, 0);
+    }
+`;
+
+const verticalScrollKeyFrame = keyframes`
+    to {
+        transform: translate(0, 0);
+    }
+`;
+
+export const ProductNameContainer = styled.span`
+    margin-left:4px;
+    white-space: nowrap;
+    animation: ${horizontalScrollKeyFrame} ${props => props.length * 0.2}s   linear forwards;
+`
+0
+
+export const ArrowAndTextContainer = styled.span`
+    animation: ${verticalScrollKeyFrame} 2s ease forwards;
+    animation-delay: 2s;
+    transform: translate(0, -200%);
+    display: flex;
+`
+
+export const TextContainer = styled.span`
+    margin-left:4px;
+`
+
 
