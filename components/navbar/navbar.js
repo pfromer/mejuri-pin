@@ -1,8 +1,6 @@
 import CustomLink from '../link/link'
 import { StyledList, StyledNavBar } from './navbarStyles'
-import React, { useState, useEffect } from 'react';
-
-
+import React from 'react';
 
 const categories = [
   {
@@ -28,7 +26,6 @@ const categories = [
 ];
 
 const NavBar = () => {
-
   return (<StyledNavBar>
     <StyledList>
       <li key={0}>

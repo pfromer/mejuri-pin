@@ -8,9 +8,6 @@ import { wrapper } from '../utilities/store';
 import { useStore } from "react-redux";
 import { Provider } from 'react-redux';
 
-
-
-
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());

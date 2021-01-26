@@ -4,11 +4,6 @@ import Grid from '../../../components/grid/grid'
 import Pin from '../../../components/pin/pin'
 
 const Category = ({ products, category }) => {
-
-
-
-
-
   return (
     <>
       <Header pinsCount={products.length} />
@@ -23,7 +18,6 @@ const Category = ({ products, category }) => {
 
 export async function getServerSideProps(context) {
   const products = await fetchProducts(context.params.id)
-
   return {
     props: {
       products: products,

@@ -4,7 +4,7 @@ import { ThemeProvider } from "styled-components";
 const theme = {
     colors: {
         powderWhite: "white",
-        strong: "#e60023",
+        strong: "#abb338", //a767c7, da5882, abb338
         lightBlue: "#AFDBD2",
         onyx: "#36313D"
     },

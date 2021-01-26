@@ -48,12 +48,8 @@ const goDown = keyframes`
         `;
 
 export const LikesLinkContainer = styled.div`
-
-       
-                animation: ${goDown} 3s ease;
-                animation-fill-mode: forwards;
-        
-
+        animation: ${goDown} 3s ease;
+        animation-fill-mode: forwards;
         display: flex;
         flex-direction: column;
         position: absolute;
@@ -65,8 +61,6 @@ export const LikesLinkContainer = styled.div`
         top: 3px;
         opacity: 1;
         z-index: 3;
-
-        
 `
 
 export const SavedSpan = styled.span`

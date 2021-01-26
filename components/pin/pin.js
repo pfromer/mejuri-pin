@@ -57,9 +57,7 @@ const Pin = (props) => {
                         </ProductNameContainer>
                     </OuterLink>
                 )}
-
             </ImageContainer>
-
         </div >
     )
 }

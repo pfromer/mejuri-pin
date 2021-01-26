@@ -5,7 +5,6 @@ export const ButtonContainer = styled.div`
     right: 0.5em;
     top: 0.5em;
 `
-
 export const OuterLink = styled.a`
     position: absolute;
     left: 0.5em;
@@ -21,7 +20,6 @@ export const OuterLink = styled.a`
     width: 90px;
     overflow: hidden;
 `
-
 export const ArrowContainer = styled.span`
     transform: rotate(45deg);
     font-size:16px;
