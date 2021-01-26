@@ -23,7 +23,7 @@ const Header = (props) => {
     return (<StyledHeader visible={visible}>
         <NavBar></NavBar>
         <BlockContainer>
-            <PinsCountContainer>{props.pinsCount} Pins</PinsCountContainer>
+            <PinsCountContainer>{props.pinsCount} {props.pinsCount == 1 ? 'Pin' : 'Pins'}</PinsCountContainer>
         </BlockContainer>
 
     </StyledHeader>)
