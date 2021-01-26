@@ -98,13 +98,13 @@ const verticalScrollKeyFrame = keyframes`
 export const ProductNameContainer = styled.span`
     margin-left:4px;
     white-space: nowrap;
-    animation: ${horizontalScrollKeyFrame} ${props => props.length * 0.2}s   linear forwards;
+    animation: ${horizontalScrollKeyFrame} ${props => props.animationDuration}s   linear forwards;
 `
 0
 
 export const ArrowAndTextContainer = styled.span`
     animation: ${verticalScrollKeyFrame} 2s ease forwards;
-    animation-delay: 2s;
+    animation-delay: ${props => props.animationDelay}s;
     transform: translate(0, -200%);
     display: flex;
 `
