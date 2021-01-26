@@ -1,5 +1,5 @@
 
-import { MainContainer, OtherButtonsContainer, SaveButtonContainer, LinkContainer, LikesLinkContainer, SavedSpan } from './productHeaderStyles';
+import { MainContainer, OtherButtonsContainer, SaveButtonContainer, LinkContainer, FixedWidthContainer, SavedSpan } from './productHeaderStyles';
 import { StyledAnchor } from '../generalStyles';
 import SaveButton from '../saveButton/saveButton';
 import { FaChevronLeft } from "react-icons/fa";
@@ -37,12 +37,14 @@ const ProductHeader = (props) => {
                 </OtherButtonsContainer>
                 <SaveButtonContainer>
                     <StyledAnchor rounded={true} href={"/likes"}>Likes</StyledAnchor>
-                    {!saved &&
-                        <SaveButton onClick={onClick}></SaveButton>
-                    }
-                    {saved &&
-                        <SavedSpan>Saved!</SavedSpan>
-                    }
+                    <FixedWidthContainer>
+                        {!saved &&
+                            <SaveButton onClick={onClick}></SaveButton>
+                        }
+                        {saved &&
+                            <SavedSpan>Saved!</SavedSpan>
+                        }
+                    </FixedWidthContainer>
                 </SaveButtonContainer>
             </MainContainer>
         </header>)

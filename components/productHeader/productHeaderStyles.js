@@ -33,34 +33,12 @@ export const SaveButtonContainer = styled.div`
         display: flex;
         flex-grow: 1;
         justify-content: space-between;
+        align-items: center;
 
 `
 export const LinkContainer = styled.div`
         font-size: 25px;
         padding-top: 1px;
-`
-
-
-const goDown = keyframes`
-                0% {top: -24px; visibility visible;}
-                99% {top: 80px; visibility visible;}
-                100% {top: 80px; visibility hidden;}
-        `;
-
-export const LikesLinkContainer = styled.div`
-        animation: ${goDown} 3s ease;
-        animation-fill-mode: forwards;
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        font-size: 14px;
-        padding-top: 5px;
-        background-color: black;
-        color: white;
-        border-radius: 12px;
-        top: 3px;
-        opacity: 1;
-        z-index: 3;
 `
 
 export const SavedSpan = styled.span`
@@ -71,6 +49,10 @@ export const SavedSpan = styled.span`
         outline: none;
         border-radius: 4px;
         padding: 2px 24px 2px 21px;
+`
+
+export const FixedWidthContainer = styled.div`
+        width: 88px;
 `
 
 

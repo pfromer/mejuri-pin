@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const StyledButton = styled.button`
     color: ${props => props.theme.colors.powderWhite};
     background-color: ${props => props.theme.colors.strong};
-    padding: 2px 24px;
+    padding: 12px 24px;
     font-size: 16px;
     display:flex;
     align-items:center;
