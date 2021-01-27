@@ -10,6 +10,7 @@ export const StyledButton = styled.button`
     border-width:0;
     outline:none;
     border-radius: 4px;
+    cursor: pointer;
 
     ${props => props.rounded && css`
         border-radius: 12px;

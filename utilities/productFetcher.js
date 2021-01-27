@@ -3,12 +3,17 @@ import getMockedEndpoint from '../mocks/category_endpoints'
 async function getApiResponse(category) {
     let jsonRes = [];
 
-    if (process.env.NEXT_PUBLIC_MOCK_API) {
+    if (process.env.NEXT_PUBLIC_MOCK_API == "true") {
         jsonRes = getMockedEndpoint(category);
     } else {
         const url = process.env.NEXT_PUBLIC_BASE_API_URL + category + '.json';
-        const res = await fetch(url);
-        jsonRes = await res.json();
+        jsonRes = await fetch(url)
+            .then(function (response) {
+                return response.json();
+            }).catch(function (err) {
+                console.log("------fetch error------", err);
+                return getMockedEndpoint(category); //in case of error on api fetch let's return the mocked data
+            });
     }
 
     return jsonRes;
