@@ -1,5 +1,5 @@
-import { ImageContainer, TextContainer, OuterLink, ArrowContainer, OverlayAnimation, OverlayText, Overlay, ButtonContainer, ProductNameContainer, ArrowAndTextContainer } from './pinStyles'
-import { FaArrowUp } from "react-icons/fa";
+import { ImageContainer, OverlayAnimation, OverlayText, Overlay, ButtonContainer } from './pinStyles'
+import OuterLink from "../outerLink/outerLink"
 import { useState } from 'react';
 import SaveButton from '../saveButton/saveButton';
 import TappableImage from '../tappableImage/tappableImage';
@@ -11,23 +11,24 @@ const Pin = (props) => {
 
     const onClick = () => {
         dispatch({ type: 'ADD_NEW_LIKE', newLike: props.product })
-        setshowAnimation(true);
+        setSaved(true);
     }
 
-    const [showButton, setShowButton] = useState(false);
-    const [showAnimation, setshowAnimation] = useState(false);
+    const [showButtonAndLink, setShowButtonAndLink] = useState(false);
+    const [saved, setSaved] = useState(false);
+    const doShowButtonAndLink = !saved && showButtonAndLink;
 
     return (
         <div>
             <ImageContainer
-                onMouseEnter={() => setShowButton(true)}
-                onMouseLeave={() => setShowButton(false)}
+                onMouseEnter={() => setShowButtonAndLink(true)}
+                onMouseLeave={() => setShowButtonAndLink(false)}
             >
                 <TappableImage
                     product={props.product}
                 />
 
-                {!showAnimation && showButton && (
+                {doShowButtonAndLink && (
                     <>
                         <Overlay
                             target="_blank" href={process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug}></Overlay>
@@ -37,26 +38,16 @@ const Pin = (props) => {
                     </>
                 )}
 
-                {showAnimation && (
+                {saved && (
                     <OverlayAnimation>
                         <OverlayText>Saved!</OverlayText>
                     </OverlayAnimation>
                 )}
 
-                {!showAnimation && showButton && (
-                    <OuterLink target="_blank" href={process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug}>
-                        <ArrowAndTextContainer animationDelay={props.product.name.length * 0.08}>
-                            <ArrowContainer>
-                                <FaArrowUp />
-                            </ArrowContainer>
-                            <TextContainer>
-                                Mejuri.com
-                            </TextContainer>
-                        </ArrowAndTextContainer>
-                        <ProductNameContainer animationDuration={props.product.name.length * 0.2}>
-                            {props.product.name}
-                        </ProductNameContainer>
-                    </OuterLink>
+                {doShowButtonAndLink && (
+                    <OuterLink
+                        product={props.product}
+                    />
                 )}
             </ImageContainer>
         </div >

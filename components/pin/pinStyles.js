@@ -21,10 +21,7 @@ export const OuterLink = styled.a`
     overflow: hidden;
     
 `
-export const ArrowContainer = styled.span`
-    transform: rotate(45deg);
-    font-size:16px;
-`
+
 export const IconContainer = styled.div`
     margin-top: 9px;
     font-size: 18px;
@@ -81,37 +78,8 @@ export const OverlayText = styled.span`
     position: relative;
 `
 
-const horizontalScrollKeyFrame = keyframes`
-    0% {
-        transform: translate(0, 0);
-    }
-    100% {
-        transform: translate(-300%, 0);
-    }
-`;
 
-const verticalScrollKeyFrame = keyframes`
-    to {
-        transform: translate(0, 0);
-    }
-`;
 
-export const ProductNameContainer = styled.span`
-    margin-left:4px;
-    white-space: nowrap;
-    animation: ${horizontalScrollKeyFrame} ${props => props.animationDuration}s   linear forwards;
-`
-0
 
-export const ArrowAndTextContainer = styled.span`
-    animation: ${verticalScrollKeyFrame} 2s ease forwards;
-    animation-delay: ${props => props.animationDelay}s;
-    transform: translate(0, -200%);
-    display: flex;
-`
-
-export const TextContainer = styled.span`
-    margin-left:4px;
-`
 
 
