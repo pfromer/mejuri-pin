@@ -13,15 +13,17 @@ const Liked = (props) => {
 
     return (
         <ImageContainer>
-            <Image
-                src={props.product.image}
-                alt={props.product.name}
-                width={500}
-                height={500}
-            >
-            </Image>
+            <a target="_blank" href={process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug}>
+                <Image
+                    src={props.product.image}
+                    alt={props.product.name}
+                    width={500}
+                    height={500}
+                >
+                </Image>
+            </a>
             <CrossContainer>
-                <FaTimes onClick={() => dispatch({ type: 'REMOVE_LIKE', product: props.product })} />
+                <FaTimes onClick={(e) => { dispatch({ type: 'REMOVE_LIKE', product: props.product }); }} />
             </CrossContainer>
 
         </ImageContainer>

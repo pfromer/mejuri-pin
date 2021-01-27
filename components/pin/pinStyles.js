@@ -19,6 +19,7 @@ export const OuterLink = styled.a`
     opacity: 0.8;
     width: 90px;
     overflow: hidden;
+    
 `
 export const ArrowContainer = styled.span`
     transform: rotate(45deg);
@@ -66,7 +67,7 @@ export const OverlayAnimation = styled.div`
     opacity:0.4;
 `
 
-export const Overlay = styled.div`
+export const Overlay = styled.a`
     ${BaseOverlayStyles}
     bottom: 0%;
     height: 98.5%;  

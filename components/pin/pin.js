@@ -29,7 +29,8 @@ const Pin = (props) => {
 
                 {!showAnimation && showButton && (
                     <>
-                        <Overlay></Overlay>
+                        <Overlay
+                            target="_blank" href={process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug}></Overlay>
                         <ButtonContainer>
                             <SaveButton onClick={onClick} rounded={true} showIcon={true} ></SaveButton>
                         </ButtonContainer>
