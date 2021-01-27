@@ -1,10 +1,14 @@
 import { fetchProductDetail } from '../utilities/productFetcher'
 import ProductHeader from '../components/productHeader/productHeader'
 import ProductMain from '../components/productMain/productMain'
+import Head from 'next/head'
 
 const Product = ({ product, otherVariants, category }) => {
     return (
         <>
+            <Head>
+                <title>Mejuri Pin - {product.name}</title>
+            </Head>
             <ProductHeader
                 category={category}
                 product={product}
