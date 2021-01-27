@@ -6,13 +6,14 @@ import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import { ADD_NEW_LIKE } from '../../redux/reducer'
 
 const ProductHeader = (props) => {
     const dispatch = useDispatch()
     const router = useRouter()
 
     const onClick = () => {
-        dispatch({ type: 'ADD_NEW_LIKE', newLike: props.product })
+        dispatch({ type: ADD_NEW_LIKE, newLike: props.product })
         setFireAnimation(true);
     }
 
@@ -49,7 +50,8 @@ const ProductHeader = (props) => {
                     }
                 </SaveButtonContainer>
             </MainContainer>
-        </header>)
+        </header>
+    )
 }
 
 export default ProductHeader

@@ -4,7 +4,7 @@ async function getApiResponse(category) {
     let jsonRes = [];
 
     if (process.env.NEXT_PUBLIC_MOCK_API == "true") {
-        jsonRes = getMockedEndpoint(category);
+        jsonRes = getMockedEndpoint(category); //I stored all api endpoints in a file. this was helpful when developing under poor network conditions
     } else {
         const url = process.env.NEXT_PUBLIC_BASE_API_URL + category + '.json';
         jsonRes = await fetch(url)
@@ -12,7 +12,7 @@ async function getApiResponse(category) {
                 return response.json();
             }).catch(function (err) {
                 console.log("------fetch error------", err);
-                return getMockedEndpoint(category); //in case of error on api fetch let's return the mocked data
+                return getMockedEndpoint(category); //hack -- in case of error on api fetch let's return the mocked data
             });
     }
 

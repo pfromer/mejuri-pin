@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const MainContainer = styled.div`
         display: flex;
@@ -34,7 +34,6 @@ export const SaveButtonContainer = styled.div`
         flex-grow: 1;
         justify-content: space-between;
         align-items: center;
-
 `
 export const LinkContainer = styled.div`
         font-size: 25px;
@@ -45,6 +44,21 @@ export const SavedSpan = styled.span`
         width: 88px;
         text-align: center;
 `
+const animateBackground = keyframes`
+    0% {
+        background: #b4cae0;
+    }
+    25% {
+        background: #f1ecec
+    }
+    50% {
+        background: #b4cae0;
+    }
+    100% {
+        background: #f1ecec
+    }
+`;
+
 export const StyledAnchor = styled.a`
         background-color: #f1ecec;
         color: black;

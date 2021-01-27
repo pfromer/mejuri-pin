@@ -4,7 +4,7 @@ import 'nprogress/nprogress.css';
 import '../public/index.css';
 import Theme from '../utilities/theme';
 import { PersistGate } from 'redux-persist/integration/react';
-import { wrapper } from '../utilities/store';
+import { wrapper } from '../redux/store';
 import { useStore } from "react-redux";
 import { Provider } from 'react-redux';
 

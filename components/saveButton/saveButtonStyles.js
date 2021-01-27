@@ -24,4 +24,3 @@ export const IconContainer = styled.div`
     margin-top: 9px;
     font-size: 18px;
 `
-
