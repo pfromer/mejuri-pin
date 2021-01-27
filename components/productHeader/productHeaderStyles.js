@@ -51,7 +51,3 @@ export const SavedSpan = styled.span`
         padding: 2px 24px 2px 21px;
 `
 
-export const FixedWidthContainer = styled.div`
-`
-
-

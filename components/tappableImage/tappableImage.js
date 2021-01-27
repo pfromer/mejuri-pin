@@ -17,7 +17,6 @@ const TappableImage = (props) => {
     }
 
     return (
-
         <ImageContainer>
             <Tappable onTap={handleTap} moveThreshold={40}>
                 <Image
