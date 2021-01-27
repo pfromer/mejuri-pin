@@ -42,12 +42,7 @@ export const LinkContainer = styled.div`
 `
 
 export const SavedSpan = styled.span`
-        font-size: 16px;
-        display: flex;
-        align-items: center;
-        border-width: 0;
-        outline: none;
-        border-radius: 4px;
-        padding: 2px 24px 2px 21px;
+        width: 88px;
+        text-align: center;
 `
 
