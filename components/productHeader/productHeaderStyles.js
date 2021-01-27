@@ -52,7 +52,6 @@ export const SavedSpan = styled.span`
 `
 
 export const FixedWidthContainer = styled.div`
-        width: 88px;
 `
 
 

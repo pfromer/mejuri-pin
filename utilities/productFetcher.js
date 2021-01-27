@@ -39,7 +39,7 @@ export async function fetchProducts(category) {
     return jsonRes.reduce((accumulator, currentValue) => accumulator.concat(mapProducts(currentValue.products)), [])
 }
 
-//hack for product details api endpoint
+//hack for product detail api endpoint
 export async function fetchProductDetail(category, id, variant) {
     const jsonRes = await getApiResponse(category);
 
