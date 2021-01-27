@@ -4,7 +4,7 @@ export const TappableImageContainer = styled.div`
         margin-top: 65px;
 `
 
-const animatePadding = keyframes`
+const animateBackground = keyframes`
     0% {
         background: #b4cae0;
     }
@@ -29,7 +29,7 @@ export const StyledAnchor = styled.a`
                 border-radius: 20px;
         `}
         ${props => props.fireAnimation && css`
-                animation: ${animatePadding} 2s ease-in-out;
+                animation: ${animateBackground} 2s ease-in-out;
         `}
 
 `

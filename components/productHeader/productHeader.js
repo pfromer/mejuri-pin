@@ -5,7 +5,6 @@ import SaveButton from '../saveButton/saveButton';
 import { FaChevronLeft } from "react-icons/fa";
 import Link from 'next/link'
 import { WhatsappShareButton, WhatsappIcon } from "react-share";
-import { FaThumbtack } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -38,9 +37,6 @@ const ProductHeader = (props) => {
 
     return (
         <header>
-            { fireAnimation && saved &&
-                <></>
-            }
             <MainContainer>
                 <OtherButtonsContainer>
                     <LinkContainer>
@@ -49,7 +45,7 @@ const ProductHeader = (props) => {
                     <WhatsappShareButton url={productLink} children={<WhatsappIcon size={30} round={true} />} />
                 </OtherButtonsContainer>
                 <SaveButtonContainer>
-                    <StyledAnchor rounded={true} fireAnimation={saved && fireAnimation} href={"/likes"}>Likes</StyledAnchor>
+                    <StyledAnchor rounded={true} fireAnimation={fireAnimation} href={"/likes"}>Likes</StyledAnchor>
                     {!saved &&
                         <SaveButton onClick={onClick}></SaveButton>
                     }

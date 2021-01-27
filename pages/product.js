@@ -22,7 +22,7 @@ const Product = ({ product, otherVariants, category }) => {
             </TappableImageContainer>
             <DistantContainer>
                 <ProductName>{product.name}</ProductName>
-                <StyledAnchor href={productLink}>Visist</StyledAnchor>
+                <StyledAnchor href={productLink}>Visit</StyledAnchor>
             </DistantContainer>
             <Grid
                 products={otherVariants}
