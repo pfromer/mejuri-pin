@@ -36,7 +36,7 @@ const ProductHeader = (props) => {
                     <WhatsappShareButton url={productLink} children={<WhatsappIcon size={30} round={true} />} />
                 </OtherButtonsContainer>
                 <SaveButtonContainer>
-                    <StyledAnchor rounded={true} href={"/likes"}>Likes</StyledAnchor>
+                    <StyledAnchor rounded={true} fireAnimation={saved && fireAnimation} href={"/likes"}>Likes</StyledAnchor>
                     <FixedWidthContainer>
                         {!saved &&
                             <SaveButton onClick={onClick}></SaveButton>

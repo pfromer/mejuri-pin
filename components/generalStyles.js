@@ -1,8 +1,23 @@
-import styled, { css } from 'styled-components'
+import styled, { css, keyframes } from 'styled-components'
 
 export const TappableImageContainer = styled.div`
         margin-top: 65px;
 `
+
+const animatePadding = keyframes`
+    0% {
+        background: #b4cae0;
+    }
+    25% {
+        background: #f1ecec
+    }
+    50% {
+        background: #b4cae0;
+    }
+    100% {
+        background: #f1ecec
+    }
+`;
 
 export const StyledAnchor = styled.a`
         background-color: #f1ecec;
@@ -13,6 +28,10 @@ export const StyledAnchor = styled.a`
         ${props => props.rounded && css`
                 border-radius: 20px;
         `}
+        ${props => props.fireAnimation && css`
+                animation: ${animatePadding} 2s ease-in-out;
+        `}
+
 `
 
 export const DistantContainer = styled.div`
