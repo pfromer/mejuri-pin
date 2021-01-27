@@ -1,5 +1,4 @@
-import { MainContainer, OtherButtonsContainer, SaveButtonContainer, LinkContainer, SavedSpan } from './productHeaderStyles';
-import { StyledAnchor } from '../generalStyles';
+import { MainContainer, OtherButtonsContainer, SaveButtonContainer, LinkContainer, SavedSpan, StyledAnchor } from './productHeaderStyles';
 import SaveButton from '../saveButton/saveButton';
 import { FaChevronLeft } from "react-icons/fa";
 import Link from 'next/link'
