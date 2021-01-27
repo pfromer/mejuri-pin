@@ -22,7 +22,7 @@ const Liked = (props) => {
                 >
                 </Image>
             </a>
-            <CrossContainer onClick={(e) => { dispatch({ type: 'REMOVE_LIKE', product: props.product }); }} >
+            <CrossContainer onClick={() => dispatch({ type: 'REMOVE_LIKE', product: props.product })} >
                 <FaTimes />
             </CrossContainer>
 

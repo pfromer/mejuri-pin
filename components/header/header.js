@@ -1,4 +1,3 @@
-import CustomLink from '../link/link'
 import NavBar from '../navbar/navbar'
 import { StyledHeader, PinsCountContainer, BlockContainer } from './headerStyles'
 import React, { useState, useEffect } from 'react';
@@ -20,13 +19,14 @@ const Header = (props) => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, [prevScrollPos, visible, handleScroll]);
 
-    return (<StyledHeader visible={visible}>
-        <NavBar></NavBar>
-        <BlockContainer>
-            <PinsCountContainer>{props.pinsCount} {props.pinsCount == 1 ? 'Pin' : 'Pins'}</PinsCountContainer>
-        </BlockContainer>
-
-    </StyledHeader>)
+    return (
+        <StyledHeader visible={visible}>
+            <NavBar></NavBar>
+            <BlockContainer>
+                <PinsCountContainer>{props.pinsCount} {props.pinsCount == 1 ? 'Pin' : 'Pins'}</PinsCountContainer>
+            </BlockContainer>
+        </StyledHeader>
+    )
 }
 
 export default Header

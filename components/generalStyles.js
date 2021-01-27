@@ -41,6 +41,6 @@ export const DistantContainer = styled.div`
         align-items: center;
 `
 export const ProductName = styled.span`
-        font-family: cursive;
+        font-family: ${props => props.theme.fontFamilies.informal};
         font-size: 17px;
 `

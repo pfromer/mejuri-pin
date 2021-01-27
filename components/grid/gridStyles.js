@@ -12,6 +12,4 @@ export const GridContainer = styled.div`
         margin-top: 65px;
         grid-gap: 10px;
     }
-
 `
-

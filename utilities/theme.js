@@ -8,7 +8,10 @@ const theme = {
         lightBlue: "#AFDBD2",
         onyx: "#36313D"
     },
-    fonts: ["sans-serif", "Roboto"],
+    fontFamilies: {
+        default: "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,ヒラギノ角ゴ Pro W3,Hiragino Kaku Gothic Pro,メイリオ,Meiryo,ＭＳ Ｐゴシック,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol",
+        informal: "cursive"
+    },
     fontSizes: {
         small: "1em",
         medium: "2em",
