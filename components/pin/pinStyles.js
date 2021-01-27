@@ -9,10 +9,10 @@ export const OuterLink = styled.a`
     position: absolute;
     left: 0.5em;
     bottom: 0.5em;
-    color: ${props => props.theme.colors.powderWhite};
+    color: ${props => props.theme.colors.lightest};
     display:flex;
     padding: 4px 16px;
-    background-color: #2a2828;
+    background-color: ${props => props.theme.colors.custom};
     border-radius: 12px;
     font-size: ${props => props.theme.fontSizes.small};
     opacity: 0.8;
@@ -38,7 +38,7 @@ const BaseOverlayStyles = css`
     bottom: 100%;
     left: 0;
     right: 0;
-    background-color: black;
+    background-color: ${props => props.theme.colors.dark};
     overflow: hidden;
     width: 100%;
     height:0;
@@ -64,7 +64,7 @@ export const Overlay = styled.a`
     height: 98.5%;  
 `
 export const OverlayText = styled.span`
-    color: white;
+    color: ${props => props.theme.colors.lightest};
     font-size: ${props => props.theme.fontSizes.large};
     top: 4%;
     padding: 0 calc(50% - 25px);

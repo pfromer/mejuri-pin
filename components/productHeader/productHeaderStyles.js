@@ -9,7 +9,7 @@ export const MainContainer = styled.div`
         opacity: 0.8;
         position: fixed;
         z-index: 2;
-        background-color: white;
+        background-color: ${props => props.theme.colors.lightest};
         width: 92.5%;
         top: 0;
         height: 65px;
@@ -61,9 +61,9 @@ const animateBackground = keyframes`
 
 export const StyledAnchor = styled.a`
         background-color: #f1ecec;
-        color: black;
+        color: ${props => props.theme.colors.dark};
         text-decoration: none;
-        font-weight: 700;
+        font-weight: ${props => props.theme.fontWeights.heavy};
         padding: 12px 25px;
         ${props => props.rounded && css`
                 border-radius: 20px;

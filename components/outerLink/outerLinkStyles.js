@@ -1,13 +1,13 @@
-import styled, { keyframes, css } from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const OuterLinkContainer = styled.a`
     position: absolute;
     left: 0.5em;
     bottom: 0.5em;
-    color: ${props => props.theme.colors.powderWhite};
+    color: ${props => props.theme.colors.lightest};
     display:flex;
     padding: 4px 16px;
-    background-color: #2a2828;
+    background-color: ${props => props.theme.colors.custom};
     border-radius: 12px;
     font-size: ${props => props.theme.fontSizes.small};
     opacity: 0.8;
@@ -48,5 +48,5 @@ export const TextContainer = styled.span`
 export const ProductNameContainer = styled.span`
     margin-left:4px;
     white-space: nowrap;
-    animation: ${horizontalScrollKeyFrame} ${props => props.animationDuration}s   linear forwards;
+    animation: ${horizontalScrollKeyFrame} ${props => props.animationDuration}s linear forwards;
 `

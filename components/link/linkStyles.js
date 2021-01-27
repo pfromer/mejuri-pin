@@ -1,5 +1,4 @@
-
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const StyledAnchor = styled.a`
   cursor: pointer;
@@ -8,19 +7,17 @@ export const StyledAnchor = styled.a`
   font-size: ${props => props.theme.fontSizes.medium};
   font-family: ${props => props.theme.fontFamilies.default};
 
-  ${({ active }) => active && `
-      background-color: black;
-      color: white;
-      font-weight: 700;
+  ${({ active }) => active && css`
+      background-color: ${props => props.theme.colors.dark};
+      color: ${props => props.theme.colors.lightest};
+      font-weight: ${props => props.theme.fontWeights.heavy};
   `}
 
-  ${({ active }) => !active && `
-
-  &:hover {
-      background-color: #e8e8e8;
-  }
-      
-      
-  color: black;
-  font-weight: 500;
+  ${({ active }) => !active && css`
+    &:hover {
+        background-color: ${props => props.theme.colors.light};
+    }
+        
+    color: ${props => props.theme.colors.dark};
+    font-weight: ${props => props.theme.fontWeights.medium};
 `}`

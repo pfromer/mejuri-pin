@@ -1,8 +1,8 @@
 import styled, { css } from 'styled-components'
 
 export const StyledButton = styled.button`
-    color: ${props => props.theme.colors.powderWhite};
-    background-color: ${props => props.theme.colors.strong};
+    color: ${props => props.theme.colors.lightest};
+    background-color: ${props => props.theme.colors.main};
     padding: 12px 24px;
     font-size: ${props => props.theme.fontSizes.medium};
     display:flex;

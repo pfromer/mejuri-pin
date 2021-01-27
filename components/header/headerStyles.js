@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 export const StyledHeader = styled.header`
     position: fixed;
     width: 100%;
-    background-color: ${props => props.theme.colors.powderWhite};
+    background-color: ${props => props.theme.colors.lightest};
     z-index:2;
     transition: top 0.6s;
     top : 0;
@@ -24,7 +24,7 @@ export const StyledHeader = styled.header`
 export const PinsCountContainer = styled.span`
     display: flex;
     justify-content: center;
-    font-weight: 100;
+    font-weight: ${props => props.theme.fontWeights.light};
     font-family: ${props => props.theme.fontFamilies.default};
     font-size: ${props => props.theme.fontSizes.small}; 
 
