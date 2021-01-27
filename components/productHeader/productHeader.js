@@ -1,4 +1,3 @@
-
 import { MainContainer, OtherButtonsContainer, SaveButtonContainer, LinkContainer, SavedSpan } from './productHeaderStyles';
 import { StyledAnchor } from '../generalStyles';
 import SaveButton from '../saveButton/saveButton';
@@ -10,15 +9,13 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 const ProductHeader = (props) => {
-
     const dispatch = useDispatch()
+    const router = useRouter()
 
     const onClick = () => {
         dispatch({ type: 'ADD_NEW_LIKE', newLike: props.product })
         setFireAnimation(true);
     }
-
-    const router = useRouter()
 
     useEffect(() => {
         const handleRouteChange = (url, { shallow }) => {
@@ -46,11 +43,10 @@ const ProductHeader = (props) => {
                 </OtherButtonsContainer>
                 <SaveButtonContainer>
                     <StyledAnchor rounded={true} fireAnimation={fireAnimation} href={"/likes"}>Likes</StyledAnchor>
-                    {!saved &&
-                        <SaveButton onClick={onClick}></SaveButton>
-                    }
-                    {saved &&
+                    {saved ?
                         <SavedSpan>Saved!</SavedSpan>
+                        :
+                        <SaveButton onClick={onClick}></SaveButton>
                     }
                 </SaveButtonContainer>
             </MainContainer>

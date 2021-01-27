@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const CrossContainer = styled.div`
     position:absolute;
     right: 0.2em;

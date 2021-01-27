@@ -7,14 +7,12 @@ export const OuterLinkContainer = styled.a`
     color: ${props => props.theme.colors.powderWhite};
     display:flex;
     padding: 4px 16px;
-
     background-color: #2a2828;
     border-radius: 12px;
     font-size: 14px;
     opacity: 0.8;
     width: 90px;
     overflow: hidden;
-    
 `
 export const ArrowContainer = styled.span`
     transform: rotate(45deg);

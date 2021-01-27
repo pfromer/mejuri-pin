@@ -12,14 +12,12 @@ export const OuterLink = styled.a`
     color: ${props => props.theme.colors.powderWhite};
     display:flex;
     padding: 4px 16px;
-
     background-color: #2a2828;
     border-radius: 12px;
     font-size: 14px;
     opacity: 0.8;
     width: 90px;
     overflow: hidden;
-    
 `
 
 export const IconContainer = styled.div`
@@ -47,8 +45,6 @@ const BaseOverlayStyles = css`
     opacity:0.05;
     top: 0;
 `
-
-
 const overlayKeyframe = keyframes`
     to {
     bottom: 0;
@@ -56,20 +52,17 @@ const overlayKeyframe = keyframes`
     }
 `;
 
-
 export const OverlayAnimation = styled.div`
     ${BaseOverlayStyles}
     animation: ${overlayKeyframe} 0.5s ease;
     animation-fill-mode: forwards;
     opacity:0.4;
 `
-
 export const Overlay = styled.a`
     ${BaseOverlayStyles}
     bottom: 0%;
     height: 98.5%;  
 `
-
 export const OverlayText = styled.span`
     color: white;
     font-size: 18px;
@@ -77,9 +70,3 @@ export const OverlayText = styled.span`
     padding: 0 calc(50% - 25px);
     position: relative;
 `
-
-
-
-
-
-

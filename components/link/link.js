@@ -14,5 +14,4 @@ const CustomLink = ({ href, as, text }) => {
     </Link>
 }
 
-
 export default CustomLink

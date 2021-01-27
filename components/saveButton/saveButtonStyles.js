@@ -16,7 +16,6 @@ export const StyledButton = styled.button`
         border-radius: 12px;
         padding: 2px 12px;
     `};
-
 `
 export const TextContainer = styled.span`
     margin-left:4px;

@@ -31,7 +31,6 @@ export const StyledAnchor = styled.a`
         ${props => props.fireAnimation && css`
                 animation: ${animateBackground} 2s ease-in-out;
         `}
-
 `
 
 export const DistantContainer = styled.div`

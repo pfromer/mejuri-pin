@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export const StyledList = styled.ul`
         display: flex;
@@ -6,7 +6,7 @@ export const StyledList = styled.ul`
         list-style-type: none;
         justify-content: center;
         margin-top: 22px;
-
+        
         li{
             margin: 0 10px;
         }
