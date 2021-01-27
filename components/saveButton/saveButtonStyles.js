@@ -4,7 +4,7 @@ export const StyledButton = styled.button`
     color: ${props => props.theme.colors.powderWhite};
     background-color: ${props => props.theme.colors.strong};
     padding: 12px 24px;
-    font-size: 16px;
+    font-size: ${props => props.theme.fontSizes.medium};
     display:flex;
     align-items:center;
     border-width:0;
@@ -22,5 +22,5 @@ export const TextContainer = styled.span`
 `
 export const IconContainer = styled.div`
     margin-top: 9px;
-    font-size: 18px;
+    font-size: ${props => props.theme.fontSizes.large};
 `

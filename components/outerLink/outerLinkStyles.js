@@ -9,14 +9,14 @@ export const OuterLinkContainer = styled.a`
     padding: 4px 16px;
     background-color: #2a2828;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: ${props => props.theme.fontSizes.small};
     opacity: 0.8;
     width: 90px;
     overflow: hidden;
 `
 export const ArrowContainer = styled.span`
     transform: rotate(45deg);
-    font-size:16px;
+    font-size: ${props => props.theme.fontSizes.medium};
 `
 
 const horizontalScrollKeyFrame = keyframes`

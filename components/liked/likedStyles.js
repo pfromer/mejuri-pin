@@ -7,5 +7,4 @@ export const CrossContainer = styled.div`
     color: ${props => props.theme.colors.strong};
     cursor: pointer;
     padding: 8px;
-
 `

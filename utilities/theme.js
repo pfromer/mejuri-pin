@@ -13,16 +13,17 @@ const theme = {
         informal: "cursive"
     },
     fontSizes: {
-        small: "1em",
-        medium: "2em",
-        large: "3em"
+        small: "14px",
+        medium: "16px",
+        large: "18px"
     },
     navbarHeight: "85px",
     productHeaderHeight: "65px",
 
-    up: breakpoint => `@media (min-width: calc(${breakpoint} + 0.02px))`,
-    down: breakpoint => `@media (max-width: ${breakpoint})`,
-
+    mediaQueries: {
+        up: breakpoint => `@media (min-width: calc(${breakpoint} + 0.02px))`,
+        down: breakpoint => `@media (max-width: ${breakpoint})`,
+    },
     breakpoints: {
         xs: "0",
         sm: "576px",

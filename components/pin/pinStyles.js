@@ -14,7 +14,7 @@ export const OuterLink = styled.a`
     padding: 4px 16px;
     background-color: #2a2828;
     border-radius: 12px;
-    font-size: 14px;
+    font-size: ${props => props.theme.fontSizes.small};
     opacity: 0.8;
     width: 90px;
     overflow: hidden;
@@ -22,7 +22,7 @@ export const OuterLink = styled.a`
 
 export const IconContainer = styled.div`
     margin-top: 9px;
-    font-size: 18px;
+    font-size: ${props => props.theme.fontSizes.large};
 `
 export const ImageContainer = styled.div`
     display: flex;
@@ -65,7 +65,7 @@ export const Overlay = styled.a`
 `
 export const OverlayText = styled.span`
     color: white;
-    font-size: 18px;
+    font-size: ${props => props.theme.fontSizes.large};
     top: 4%;
     padding: 0 calc(50% - 25px);
     position: relative;
