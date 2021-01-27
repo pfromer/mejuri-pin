@@ -3,7 +3,7 @@ import { ImageContainer } from '../pin/pinStyles'
 import { CrossContainer } from './likedStyles'
 import { FaTimes } from "react-icons/fa";
 import { useDispatch } from 'react-redux'
-import { REMOVE_LIKE } from '../../redux/reducer'
+import { REMOVE_LIKE } from '../../redux/likesReducer'
 
 const Liked = (props) => {
     const dispatch = useDispatch();

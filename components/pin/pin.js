@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SaveButton from '../saveButton/saveButton';
 import TappableImage from '../tappableImage/tappableImage';
 import { useDispatch } from 'react-redux'
-import { ADD_NEW_LIKE } from '../../redux/reducer'
+import { ADD_NEW_LIKE } from '../../redux/likesReducer'
 
 const Pin = (props) => {
     const dispatch = useDispatch();

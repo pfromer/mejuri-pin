@@ -4,7 +4,7 @@ import Liked from '../components/liked/liked'
 import { useSelector } from 'react-redux'
 
 const Likes = () => {
-    const likes = useSelector(state => state.reducer.likes)
+    const likes = useSelector(state => state.likesReducer.likes)
     return (
         <>
             <Header pinsCount={likes.length} />

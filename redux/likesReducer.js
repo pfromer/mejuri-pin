@@ -1,7 +1,7 @@
 export const ADD_NEW_LIKE = 'ADD_NEW_LIKE';
 export const REMOVE_LIKE = 'REMOVE_LIKE';
 
-const reducer = (state = { likes: [], categories_fetched: [] }, action) => {
+const likesReducer = (state = { likes: [], categories_fetched: [] }, action) => {
     switch (action.type) {
         case ADD_NEW_LIKE:
             if (state.likes.some(l => l.id == action.newLike.id && l.variant == action.newLike.variant)) {
@@ -16,4 +16,4 @@ const reducer = (state = { likes: [], categories_fetched: [] }, action) => {
     }
 };
 
-export default reducer;
+export default likesReducer;

@@ -1,35 +1,26 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import { createWrapper } from "next-redux-wrapper";
 import thunkMiddleware from "redux-thunk";
-import reducer from './reducer';
+import likesReducer from './likesReducer';
 
-
-
-
-//COMBINING ALL REDUCERS
 const combinedReducer = combineReducers({
-    reducer,
-    // OTHER REDUCERS WILL BE ADDED HERE
+    likesReducer,
 });
 
-// BINDING MIDDLEWARE
 const bindMiddleware = (middleware) => {
-
     return applyMiddleware(...middleware);
 };
 
 const makeStore = ({ isServer }) => {
     if (isServer) {
-        //If it's on server side, create a store
         return createStore(combinedReducer, bindMiddleware([thunkMiddleware]));
     } else {
-        //If it's on client side, create a store which will persist
         const { persistStore, persistReducer } = require("redux-persist");
         const storage = require("redux-persist/lib/storage").default;
 
         const persistConfig = {
             key: "nextjs",
-            whitelist: ["reducer"], // only reducer will be persisted, add other reducers if needed
+            whitelist: ["likesReducer"], // only likesReducer will be persisted, add other reducers if needed
             storage, // if needed, use a safer storage
         };
 

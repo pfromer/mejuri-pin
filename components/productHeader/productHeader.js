@@ -6,7 +6,7 @@ import { WhatsappShareButton, WhatsappIcon } from "react-share";
 import { useDispatch, useSelector } from 'react-redux'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-import { ADD_NEW_LIKE } from '../../redux/reducer'
+import { ADD_NEW_LIKE } from '../../redux/likesReducer'
 
 const ProductHeader = (props) => {
     const dispatch = useDispatch()
@@ -27,7 +27,7 @@ const ProductHeader = (props) => {
         }
     }, [])
 
-    const likes = useSelector(state => state.reducer.likes);
+    const likes = useSelector(state => state.likesReducer.likes);
     const [fireAnimation, setFireAnimation] = useState(false);
     var saved = likes.some(l => l.variant == props.product.variant && l.id == props.product.id);
     const productLink = process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL + props.product.slug;
