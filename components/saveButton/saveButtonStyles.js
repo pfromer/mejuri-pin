@@ -9,11 +9,11 @@ export const StyledButton = styled.button`
     align-items:center;
     border-width:0;
     outline:none;
-    border-radius: 4px;
+    border-radius: ${props => props.theme.borderRadius.softest};
     cursor: pointer;
 
     ${props => props.rounded && css`
-        border-radius: 12px;
+        border-radius: ${props.theme.borderRadius.standard};
         padding: 2px 12px;
     `};
 `

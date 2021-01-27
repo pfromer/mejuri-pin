@@ -26,7 +26,7 @@ export const StyledAnchor = styled.a`
         font-weight: ${props => props.theme.fontWeights.heavy};
         padding: 12px 25px;
         ${props => props.rounded && css`
-                border-radius: 20px;
+                border-radius:  ${props.theme.borderRadius.heavy};
         `}
         ${props => props.fireAnimation && css`
                 animation: ${animateBackground} 2s ease-in-out;

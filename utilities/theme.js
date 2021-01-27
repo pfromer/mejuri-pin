@@ -23,6 +23,12 @@ const theme = {
         medium: "500",
         heavy: "700"
     },
+    borderRadius: {
+        softest: "4px",
+        standard: "12px",
+        heavy: "20px",
+        heaviest: "24px"
+    },
     navbarHeight: "85px",
     mediaQueries: {
         up: breakpoint => `@media (min-width: calc(${breakpoint} + 0.02px))`,

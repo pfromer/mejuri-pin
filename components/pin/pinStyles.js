@@ -13,7 +13,7 @@ export const OuterLink = styled.a`
     display:flex;
     padding: 4px 16px;
     background-color: ${props => props.theme.colors.custom};
-    border-radius: 12px;
+    border-radius: ${props => props.theme.borderRadius.standard};
     font-size: ${props => props.theme.fontSizes.small};
     opacity: 0.8;
     width: 90px;
@@ -29,7 +29,7 @@ export const ImageContainer = styled.div`
     position: relative;
 
     > div, img {
-        border-radius: 12px;
+        border-radius: ${props => props.theme.borderRadius.standard};
     }
 `
 
