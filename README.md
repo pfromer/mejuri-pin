@@ -4,5 +4,5 @@ yarn
 # Run 
 yarn dev
 
-# Vercel link 
+# Demo
 https://mejuri-pin-nine.vercel.app/
