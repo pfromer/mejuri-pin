@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 
 export const OuterLinkContainer = styled.a`
+    font-family: ${props => props.theme.fontFamilies.formal};
     position: absolute;
     left: 0.5em;
     bottom: 0.5em;

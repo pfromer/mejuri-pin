@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components'
 
 export const StyledAnchor = styled.a`
-  cursor: pointer;
   padding: 12px 20px;
   border-radius: ${props => props.theme.borderRadius.heaviest};
   font-size: ${props => props.theme.fontSizes.medium};
