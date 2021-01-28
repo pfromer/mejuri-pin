@@ -1,9 +1,9 @@
 import {
-    ImageContainer,
-    OverlayAnimation,
-    OverlayText,
-    Overlay,
-    ButtonContainer,
+  ImageContainer,
+  OverlayAnimation,
+  OverlayText,
+  Overlay,
+  ButtonContainer,
 } from "./pinStyles";
 import OuterLink from "../outerLink/outerLink";
 import { useState } from "react";
@@ -13,52 +13,52 @@ import { useDispatch } from "react-redux";
 import { ADD_NEW_LIKE } from "../../redux/likesReducer";
 
 const Pin = (props) => {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    const onClick = () => {
-        dispatch({ type: ADD_NEW_LIKE, newLike: props.product });
-        setSaved(true);
-    };
+  const onClick = () => {
+    dispatch({ type: ADD_NEW_LIKE, newLike: props.product });
+    setSaved(true);
+  };
 
-    const [showButtonAndLink, setShowButtonAndLink] = useState(false);
-    const [saved, setSaved] = useState(false);
-    const doShowButtonAndLink = !saved && showButtonAndLink;
+  const [showButtonAndLink, setShowButtonAndLink] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const doShowButtonAndLink = !saved && showButtonAndLink;
 
-    return (
-        <ImageContainer
-            onMouseEnter={() => setShowButtonAndLink(true)}
-            onMouseLeave={() => setShowButtonAndLink(false)}
-        >
-            <TappableImage product={props.product} />
+  return (
+    <ImageContainer
+      onMouseEnter={() => setShowButtonAndLink(true)}
+      onMouseLeave={() => setShowButtonAndLink(false)}
+    >
+      <TappableImage product={props.product} />
 
-            {doShowButtonAndLink && (
-                <>
-                    <Overlay
-                        target="_blank"
-                        href={
-                            process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL +
-                            props.product.slug
-                        }
-                    />
-                    <ButtonContainer>
-                        <SaveButton
-                            onClick={onClick}
-                            rounded={true}
-                            showIcon={true}
-                        />
-                    </ButtonContainer>
-                </>
-            )}
+      {doShowButtonAndLink && (
+        <>
+          <Overlay
+            target="_blank"
+            href={
+              process.env.NEXT_PUBLIC_MEJURI_BASE_PRODUCT_URL +
+              props.product.slug
+            }
+          />
+          <ButtonContainer>
+            <SaveButton
+              onClick={onClick}
+              rounded={true}
+              showIcon={true}
+            />
+          </ButtonContainer>
+        </>
+      )}
 
-            {saved && (
-                <OverlayAnimation>
-                    <OverlayText>Saved!</OverlayText>
-                </OverlayAnimation>
-            )}
+      {saved && (
+        <OverlayAnimation>
+          <OverlayText>Saved!</OverlayText>
+        </OverlayAnimation>
+      )}
 
-            {doShowButtonAndLink && <OuterLink product={props.product} />}
-        </ImageContainer>
-    );
+      {doShowButtonAndLink && <OuterLink product={props.product} />}
+    </ImageContainer>
+  );
 };
 
 export default Pin;
