@@ -29,9 +29,17 @@ const NavBar = () => {
   return (<StyledNavBar>
     <StyledList>
       <li key={0}>
-        <CustomLink href="/likes" text="Likes" />
+        <CustomLink
+          href="/likes"
+          text="Likes" />
       </li>
-      {categories.map((c, index) => <li key={index + 1}><CustomLink href="/category/[id]" as={"/category/" + c.endpoint} text={c.nav} /></li>)}
+      {categories.map((c, index) =>
+        <li key={index + 1}>
+          <CustomLink
+            href="/category/[id]"
+            as={"/category/" + c.endpoint}
+            text={c.nav} />
+        </li>)}
     </StyledList>
   </StyledNavBar>)
 }
