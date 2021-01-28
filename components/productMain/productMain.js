@@ -2,8 +2,7 @@ import {
   TappableImageContainer,
   DistantContainer,
   ProductName,
-  StyledAnchor,
-  ButtonContainer,
+  StyledAnchor
 } from "./productMainStyles";
 import Grid from "../grid/grid";
 import Pin from "../pin/pin";

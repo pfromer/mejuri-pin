@@ -12,7 +12,11 @@ const Likes = () => {
         <title>Mejuri Pin - My Favorites</title>
       </Head>
       <Header pinsCount={likes.length} />
-      <Grid products={likes} category="likes" childType={Liked}></Grid>
+      <Grid
+        products={likes}
+        category="likes"
+        childType={Liked}
+      />
     </>
   );
 };
