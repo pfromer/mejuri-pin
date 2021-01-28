@@ -23,7 +23,6 @@ const ProductMain = (props) => {
       </DistantContainer>
       <Grid
         products={props.otherVariants}
-        onChildClick={() => { }}
         category={props.category}
         childType={Pin}
       />
