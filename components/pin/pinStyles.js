@@ -2,7 +2,7 @@ import styled, { keyframes, css } from 'styled-components'
 
 export const ButtonContainer = styled.div`
     position: absolute;
-    right: 0.5em;
+    right: 0.4em;
     top: 0.5em;
 `
 export const OuterLink = styled.a`
